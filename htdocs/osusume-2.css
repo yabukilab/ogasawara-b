@@ -1,0 +1,14 @@
+body{
+    background-color:#ffffaa;
+}
+p{
+color:black;
+font-size:120%;
+}
+.box_css{
+width:1000px;
+margin:0.5em;
+border:solid 1px #ffcc00;
+border:solid 1px #ffcc00;
+background-color:#ffffcc;
+}
