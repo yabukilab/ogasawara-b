@@ -1,9 +1,13 @@
 body{
     background-color:#ffffaa;
 }
+h1{
+color:black;
+font-size:35px;
+}
 p{
 color:black;
-font-size:120%;
+font-size:17px;
 }
 .box_css{
 width:1000px;
