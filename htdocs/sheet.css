@@ -12,7 +12,7 @@ h1 {color: red;
 }
 h2 {color:green;
     font-style: italic;
-    text-stretch: semi-expanded;
+    
 }
 h3 {color:blue;
     font-size: large;
@@ -25,7 +25,7 @@ h4 {color:orange;
 
 h5 {color:gray;
     font-size: large;
-    align: center;
+
 }
 
 
