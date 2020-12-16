@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="zikken3.css" media="all">
+<title> Simple Text Site</title>
+</head>
+<style>
+        [data-filter-view]:not([data-filter-view=""]) [data-filter-key] {
+            display:none;
+        }
+        [data-filter-view][data-filter-view="個室有"] [data-filter-key="個室有"],
+        [data-filter-view][data-filter-view="喫煙可"] [data-filter-key="喫煙可"],
+        [data-filter-view][data-filter-view="飲み放題有"] [data-filter-key="飲み放題有"]
+        {display:block;}
+        </style>
+        <body>
+        <div class="filter" id="js-filter">
+        <ul class="filter-cond">
+        <h1> <li><label><input type="checkbox" value="個室有">個室有</label></li>
+        <li><label><input type="checkbox" value="喫煙可">喫煙可</label></li>
+        <li><label><input type="checkbox" value="飲み放題有">飲み放題有</label></li>
+        <!-- /.filter-cond --></h1>
+        
+        <ul class="filter-items">
+        
+        <li data-filter-key="飲み放題有">HUB</li>
+        <li data-filter-key="個室有">北海道</li>
+        <li data-filter-key="飲み放題有">北海道</li>
+        <li data-filter-key="個室有">丸鮮</li>
+        <li data-filter-key="喫煙可">丸鮮</li>
+        <li data-filter-key="飲み放題有">丸鮮</li>
+        <li data-filter-key="飲み放題有">Ci sono!</li>
+        <li data-filter-key="個室有">魚一商店</li>
+        <li data-filter-key="飲み放題有">魚一商店</li>
+        <li data-filter-key="飲み放題有">参佰宴</li>
+        <li data-filter-key="喫煙可">参佰宴</li>
+        <li data-filter-key="飲み放題有">ちばチャン</li>
+        <li data-filter-key="飲み放題有">津田沼肉流通センター</li>
+        <li data-filter-key="飲み放題有">博多劇場</li>
+        <li data-filter-key="飲み放題有">Porky's kitchen </li>
+        <li data-filter-key="個室有">鶏ヤロー!</li>
+        <li data-filter-key="喫煙可">鶏ヤロー!</li>
+        <li data-filter-key="飲み放題有">鶏ヤロー!</li>
+        <li data-filter-key="飲み放題有">肉寿司</li>
+        <li data-filter-key="個室有">赤から</li>
+        <li data-filter-key="飲み放題有">赤から</li>
+        <li data-filter-key="喫煙可">とりとんくん</li>
+        <li data-filter-key="飲み放題有">とりとんくん</li>
+        <li data-filter-key="個室有">メキシコ酒場</li>
+
+        
+        <!-- /.filter-items --></ul>
+        <!-- /#js-filter--></div>
+        <script type="text/javascript" src="zikken.js"></script>
+        </body>
+</html>
+
+        
