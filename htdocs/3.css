@@ -54,7 +54,7 @@ html {
   
   /* メイン */
   #hero {
-    background-image: url(../images/LINE_ALBUM_飲食店\ 資料_231006.jpg);
+    /* background-image: url(../images/LINE_ALBUM_飲食店\ 資料_231006.jpg); 写真 */
     background-position: center;
     background-size: cover;
     height: 540px;
@@ -270,4 +270,3 @@ html {
     font-size: 12px;
     margin-top: 40px;
   }
-  
