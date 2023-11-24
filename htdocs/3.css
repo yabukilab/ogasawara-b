@@ -54,7 +54,7 @@ html {
   
   /* メイン */
   #hero {
-    /* background-image: url(../images/LINE_ALBUM_飲食店\ 資料_231006.jpg); 写真 */
+    background-image: url(../images/LINE_ALBUM_飲食店\ 資料_231006.jpg); 
     background-position: center;
     background-size: cover;
     height: 540px;
@@ -121,7 +121,7 @@ html {
     line-height: 2;
   }
   .concept-img {
-    background-image: url(../images/tudanuma.night.jpg);
+    background-image: url(../images/写真);
     background-position: center;
     background-size: cover;
     height: 340px;
@@ -191,82 +191,4 @@ html {
       font-size: 17px;
     }
   }
-    
   
-  
-  #company {
-    margin-bottom: 120px;
-  }
-  #company dl {
-    max-width: 900px;
-    margin-left: auto;
-  }
-  #company dt {
-    width: 30%;
-    padding: 48px 0;
-    font-weight: 500;
-    border-bottom: solid 1px #D2ECBA;
-  }
-  #company dd {
-    width: 70%;
-    padding: 48px 0;
-    border-bottom: solid 1px #D2ECBA;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    #company dl {
-      font-size: 13px;
-    }
-  }
-  
-  
-  .column-a {
-    background-image: url(../images/cit.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 24%;
-    height: 270px;
-    border-radius: 20px;
-  }
-  .column-b {
-    background-image: url(../images/paruko.webp);
-    background-position: center;
-    background-size: cover;
-    width: 18%;
-    height: 270px;
-    border-radius: 20px;
-  }
-  .column-c {
-    background-image: url(../images/tudanumaeki.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 24%;
-    height: 270px;
-    border-radius: 20px;
-  }
-  .column-d {
-    background-image: url(../images/tudamumaekimae.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 28%;
-    height: 270px;
-    border-radius: 20px;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .column-a, .column-b, .column-c, .column-d {
-      width: 48%;
-      height: 140px;
-      margin: 1%;
-    }
-  }
-  
-  
-  footer {
-    text-align: center;
-    margin: 90px 0;
-  }
-  .copyright {
-    font-size: 12px;
-    margin-top: 40px;
-  }
