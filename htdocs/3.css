@@ -17,41 +17,12 @@ html {
     flex-wrap: wrap;
     align-items: center;
   }
-  
-  
-  /* ヘッダー */
-  header {
-    padding: 27px 0;
+  .header_menu{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
   }
-  .logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-  }
-  .logo span {
-    color: #80BA4A;
-  }
-  .header_menu li {
-    margin-left: 40px;
-  }
-  .header_menu li a {
-    transition: .3s;
-  }
-  .header_menu li a:hover {
-    color: #80BA4A;
-    transition: .3s;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    header .container {
-      justify-content: center;
-    }
-    .header_menu li {
-      margin: 20px 16px 0;
-    }
-  }
-  
-  
   /* メイン */
   #hero {
     background-image: url(../images/LINE_ALBUM_飲食店\ 資料_231006.jpg); 
