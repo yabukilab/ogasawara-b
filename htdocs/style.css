@@ -1,38 +1,26 @@
 @charset "utf-8";
 
-.container{
-    width: 90%;
-    max-width: 1120px;
-    background-color:azure;
-    margin: 0 auto;
-}
-
-.container2{
-    width: 90%;
-    max-width: 1120px;
-    margin-left: 350px;
-}
-.flex{
-    display: flex;
-    justify-content: space-around; /*左右に離す*/
-    flex-wrap: wrap;  /*自動的に横並び*/
-    align-items: center;  /*上下中央に*/
-}
-
 /* ヘッダー */
-.logo{
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-}
-.header_menu li{
-    margin-left: 100px;
-}
-.header_menu li a{
-    transition: .3s;
+header{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: azure;
+    align-items: center;
+    position: fixed;
 }
 
-.header_menu li a:hover{
-    color:red;
-    transition: .3s;
+p{
+    padding: 130px 0px;
+    height:500px;
+}
+
+.title{
+    margin-right: auto;
+}
+
+.menu-item{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
 }
