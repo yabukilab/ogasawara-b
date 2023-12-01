@@ -29,4 +29,9 @@ body{
 ul{
   list-style: none;
 }
-
+.column-2 {
+  width: 45%;
+}
+.text {
+  line-height: 2;
+}
