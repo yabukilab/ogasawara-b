@@ -14,8 +14,8 @@ body{
   flex-wrap: wrap;
   align-items: center;
 }
-.header-menu p{
- margin-left: 40px
+.header-menu li{
+ margin-left: 40px;
 }
 .img-home{
   background-image: url(../htdocs/colorburia.webp);
@@ -25,5 +25,8 @@ body{
   height: 200px;
   display: flex;
   justify-content: space-around;
+}
+ul{
+  list-style: none;
 }
 
