@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body{
+  font-family: 'Hiragino Kaku Gothic Pro','Meiryo','sans-serif';
+}
+.container-home{
+  width:90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.header-home{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header-menu p{
+ margin-left: 40px
+}
+.img-home{
+  background-image: url(../htdocs/colorburia.webp);
+  background-image: url(../htdocs/colorburia2.webp);
+  background-repeat: no-repeat;
+  width: auto;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
