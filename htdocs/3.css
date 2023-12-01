@@ -5,8 +5,8 @@ html {
   .pop {font-family: 'Poppins', sans-serif;}
   
   .container {
-    width: 90%;
-    max-width: 1120px;
+    width: 220%;
+    max-width: 1150px;
     margin: 0 auto;
     position: relative;
   }
