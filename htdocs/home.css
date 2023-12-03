@@ -17,16 +17,15 @@ body{
 .header li{
  margin-left: 50px;
 }
-.img-home{
-  background-image: url(../htdocs/colorburia.webp);
-  background-image: url(../htdocs/colorburia2.webp);
-  background-repeat: no-repeat;
-  width: auto;
-  height: 200px;
-  display: flex;
-  justify-content: space-around;
-}
 ul{
   list-style: none;
 }
-
+.column-2 {
+  width: 45%;
+}
+.text {
+  line-height: 2;
+}
+.title{
+  color: orangered;
+}
