@@ -36,9 +36,9 @@ ul{
   margin-bottom: 40px;
   position: relative;
 }
-@media (max-width:768px) {
-  .column-2 {
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  @media only screen and (max-width: 768px) {
+    .column-2 {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
