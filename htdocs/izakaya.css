@@ -19,3 +19,9 @@
   .column-2 {
     width: 45%;
   }
+  @media only screen and (max-width: 768px) {
+    .column-2 {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
