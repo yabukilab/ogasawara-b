@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.container{
+  width:90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .header li {
+    margin-left: 50px;
+   }
+   ul{
+    list-style: none;
+  }
+  .column-2 {
+    width: 45%;
+  }
