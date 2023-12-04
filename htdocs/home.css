@@ -29,3 +29,7 @@ ul{
 .title{
   color: orangered;
 }
+.inner{
+  margin-bottom: 40px;
+  position: relative;
+}
