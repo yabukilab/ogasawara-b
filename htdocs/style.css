@@ -1,18 +1,14 @@
-.sample img{
-  width:100%;
-  height: 800px;
-  border-radius: 30px;
+html {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-h1{
-  position: absolute;
-  top: 40%;
-  left: 25%;
-  font-size: 50px;
-  color:white;
-  padding: 0;
-  margin: 0;
-  transform: translate(-50%,-50%);
+.pop {font-family: 'Poppins', sans-serif;}
+
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .flex{
@@ -22,16 +18,11 @@ h1{
   align-items: center;
 }
 
-.container{
-  width:90%;
-   max-width: 1120px;
-   margin: 0 auto;
-  color:white;
-  position: absolute;
-  top: 5%;
-  left: 55%;
+h1{
+  color: black;
 }
 
+/* ヘッダー */
 .header li{
   margin-left: 50px;
  }
@@ -45,51 +36,166 @@ a{
   color: white;
 }
 
-/* 横並び */
-
-.flex2 {
-  display: flex; /*横並び*/
+.container2{
+  width:90%;
+   max-width: 1120px;
+   margin: 0 auto;
+  color:white;
+  position: absolute;
+  top: 5%;
+  left: 55%;
 }
-.flex2 .image {
-  width: 640px; /*画像サイズ指定*/
-  margin-top: 200px;
-  margin-left: 200px;
+
+h1{
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-size: 50px;
+  color:white;
   padding: 0;
+  margin: 0;
+  transform: translate(-50%,-50%);
+}
+
+/* メイン */
+#hero {
+  background-image: url(https://picsum.photos/id/237/960/540);
+  background-position: center;
+  background-size: cover;
+  height: 540px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
   overflow: hidden;
-  position: relative;
 }
-.flex2 .right {
-  margin: 0 0 0 20px;
-  padding: 0;
-}
-.flex2 .title {
-  margin-top: 200px;
-  padding: 0;
-  font-weight: bold;
-  font-size: 18px;
-}
-.flex2 .text {
-  margin: 10px 0 0;
-  padding: 0;
-}
-
-/* 画像を天地中央表示 */
-
-.flex2 .image {
-  overflow: hidden;
-  position: relative;
-}
-.flex2 .image::before {
-  content: "";
-  display: block;
-  padding-top: 58%;
-}
-.flex2 .image img {
+#hero::before {
+  content: '';
   width: 100%;
+  height: 100%;
+  background-color: #000000;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  opacity: 0.2;
+  z-index: 1;
 }
+.hero_inner {
+  z-index: 2;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+}
+.hero_inner p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.hero_inner h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  #hero {height: 460px;}
+  .hero_inner p {font-size: 15px;}
+  .hero_inner h1 {font-size: 17px;}
+}
+
+
+
+#concept {
+  margin-bottom: 120px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #80BA4A;
+  margin-bottom: 40px;
+}
+#concept h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.column-2 {
+  width: 48%;
+}
+.text {
+  line-height: 2;
+}
+.concept-img {
+  background-image: url(../images/tudanuma.night.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 340px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  #concept h3 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .column-2 {
+    width: 100%;
+  }
+  .text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .concept-img {margin-top: 30px;}
+}
+
+
+#service {
+  margin-bottom: 120px;
+}
+
+.service_inner {
+  margin-bottom: 40px;
+  position: relative;
+}
+.column-40 {
+  width: 40%;
+}
+.column-55 {
+  width: 55%;
+}
+#service img {
+  border-radius: 20px;
+}
+#service h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .column-40 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .column-55 {
+    width: 100%;
+  }
+  #service h3 {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #company dl {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .column-a, .column-b, .column-c, .column-d {
+    width: 48%;
+    height: 140px;
+    margin: 1%;
+  }
+}
+
