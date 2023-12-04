@@ -21,7 +21,7 @@ ul{
   list-style: none;
 }
 .column-2 {
-  width: 40%;
+  width: 48%;
 }
 .column-3 {
   width: 55%;
@@ -37,7 +37,7 @@ ul{
   position: relative;
 }
 @media (max-width:768px) {
-  .flex {
+  .column-2 {
     flex-direction: column;
     justify-content: space-between;
   }
