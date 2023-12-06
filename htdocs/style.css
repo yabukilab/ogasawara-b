@@ -32,6 +32,7 @@ header {
 }
 .header_menu li {
   margin-left: 20px;
+  margin-top: 40px;
 }
 .header_menu li a {
   transition: .3s;
