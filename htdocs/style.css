@@ -23,7 +23,7 @@ header {
   padding: 27px 0;
 }
 .logo {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
@@ -51,7 +51,8 @@ header {
 a{
   text-decoration: none;
   color:black;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight:600
 }
 h1{
   position: absolute;
