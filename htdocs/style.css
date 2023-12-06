@@ -118,13 +118,6 @@ h1{
 .text {
   line-height: 2;
 }
-.concept-img {
-  background-image: url(../images/tudanuma.night.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 340px;
-  border-radius: 20px;
-}
 
 @media only screen and (max-width: 768px) {
   #concept h3 {
