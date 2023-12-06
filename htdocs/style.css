@@ -18,10 +18,6 @@ html {
   align-items: center;
 }
 
-h1{
-  color: black;
-}
-
 /* ヘッダー */
 header {
   padding: 27px 0;
@@ -35,7 +31,7 @@ header {
   color:rgb(1, 122, 203);
 }
 .header_menu li {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 .header_menu li a {
   transition: .3s;
