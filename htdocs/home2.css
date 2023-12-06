@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+body{
+  font-family: 'Hiragino Kaku Gothic Pro','Meiryo','sans-serif';
+}
+.pop {font-family: 'Poppins', sans-serif;}
+
+.container{
+  width:90%;
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* ヘッダー */
+header {
+    padding: 27px 0;
+  }
+  .logo {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  .logo span {
+    color:rgb(1, 122, 203);
+  }
+  .header_menu li {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  .header_menu li a {
+    transition: .3s;
+  }
+  .header_menu li a:hover {
+    color: #ba4aa9;
+    transition: .3s;
+  }
+  .header li{
+    margin-left: 50px;
+   }
+   
+   ul{
+    list-style: none;
+  }
+  
+  a{
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+    font-weight:600
+  }
+.column-2 {
+  width: 48%;
+}
+.column-3 {
+  width: 55%;
+}
+.text {
+  line-height: 2;
+}
+.title{
+  color: orangered;
+}
+.inner{
+  margin-bottom: 40px;
+  position: relative;
+}
+  @media only screen and (max-width: 768px) {
+    .column-2 {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
