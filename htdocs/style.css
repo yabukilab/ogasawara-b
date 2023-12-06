@@ -93,7 +93,7 @@ h1{
 
 @media only screen and (max-width: 768px) {
   #hero {height: 460px;}
-  .hero_inner p {font-size: 15px;}
+  .hero_inner p {font-size: 100px;}
   .hero_inner h1 {font-size: 17px;}
 }
 
