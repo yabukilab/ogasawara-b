@@ -86,14 +86,14 @@ h1{
   text-align: center;
 }
 .hero_inner p {
-  font-size: 50px;
+  font-size: 35px;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
 @media only screen and (max-width: 768px) {
   #hero {height: 460px;}
-  .hero_inner p {font-size: 50px;}
+  .hero_inner p {font-size: 35px;}
   .hero_inner h1 {font-size: 17px;}
 }
 
