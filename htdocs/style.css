@@ -178,17 +178,3 @@ h1{
   }
 }
 
-@media only screen and (max-width: 768px) {
-  #company dl {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .column-a, .column-b, .column-c, .column-d {
-    width: 48%;
-    height: 140px;
-    margin: 1%;
-  }
-}
-
