@@ -41,12 +41,12 @@ header {
     transition: .3s;
   }
   .header li{
-    margin-left:50px; 
+    margin-left:20px; 
    }
    
    ul{
     list-style: none;
-    margin-left: 10px;
+    margin-right: 25px;
   }
   
   a{
