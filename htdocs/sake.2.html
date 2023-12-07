@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>あなたのホームページのタイトル</title>
     <!-- ここにはCSSやその他のヘッダー情報を追加できます -->
-    <link rel="stylesheet" href="sake2.css" />
+    <link rel="stylesheet" href="sake2.css" >
     
 </head>
 <body>
     <!-- ページのコンテンツをここに追加 -->
 
     <header>
-        <h1>津田沼で</h1>
-        <h1>お酒が買える場所5選！</h1>
+        <h2>津田沼で</h2>
+        <h2>お酒が買える場所5選！</h2>
         <nav>
+            <ul>
+                <li><a href="index.html">トップページ</a></li>
+                <li><a href="home.html">物件情報</a></li>
+                <li><a href="izakaya.html">居酒屋</a></li>
+                <li><a href="pachinko.html">パチンコ</a></li>
+            </ul>
+            <h2>～目次～</h2>
             <ul>
                 <li><a href="#section1">ザ・ガーデン自由が丘</a></li>
                 <li><a href="#section2">河内屋</a></li>
@@ -34,12 +41,17 @@
             <img src="ザ・ガーデン2.jpg" alt="画像の代わりとなるテキスト入力します" width="400">
             <p>ビールやサワー、焼酎、日本酒など置いてあります。種類は少ないですが、帰宅のついでによってお酒を買う場所としてはGood!
             </p>
-            <p>＜営業時間＞AM8:00～PM10:00<br>（土曜・日曜・祝日はAM8:00～PM9:00）
-            <br>＜TEL＞： 047-403-7191
-            <br>＜FAX＞： 047-403-7192
-            <br>＜住所＞：千葉県習志野市津田沼1-1-1<br>ペリエ津田沼　改札内
-            </p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.1068084896086!2d140.01935278559029!3d35.69110278526076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228020cbac8c85%3A0xf55a433306ff8007!2z44K244O744Ks44O844OH44Oz6Ieq55Sx44GM5LiYIOa0peeUsOayvOW6lw!5e0!3m2!1sja!2sjp!4v1699599560173!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="left-align">
+            <p>---------------------------------------</p>
+            <p>＜営業時間＞AM8:00～PM10:00<br>（土曜・日曜・祝日<br>　　　　　　　AM8:00～PM9:00）
+            <br>＜TEL＞ 047-403-7191
+            <br>＜FAX＞ 047-403-7192
+            <br>＜住所＞千葉県習志野市津田沼1-1-1<br>　　　　ペリエ津田沼　改札内
+            <p>---------------------------------------</p>
+        </div>
+            <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.1068084896086!2d140.01935278559029!3d35.69110278526076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228020cbac8c85%3A0xf55a433306ff8007!2z44K244O744Ks44O844OH44Oz6Ieq55Sx44GM5LiYIOa0peeUsOayvOW6lw!5e0!3m2!1sja!2sjp!4v1699599560173!5m2!1sja!2sjp" width="300" height="300" style="border:0;"></iframe>
+            </div>
         </section>
 
         <section id="section2">
@@ -51,21 +63,29 @@
             <img src="河内屋5.jpg" alt="画像の代わりとなるテキスト入力します" width="150">
             <img src="河内屋6.jpg" alt="画像の代わりとなるテキスト入力します" width="150">
             <p>さすが業務スーパーと言える程の種類の豊富さ！缶類は基本冷えています。瓶は冷えていませんが、とても種類が多くて見るのに一苦労しそうです💦ただ、お酒好きにはたまらない品揃えになっています。</p>
+            <p>---------------------------------------</p>
             <p>＜営業時間＞AM10:00～PM10:00
-                <br>＜TEL＞：047-476-6151
-                <br>＜住所＞：千葉県習志野市津田沼1-3-1<br>ミーナ津田沼1F</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.2369947227771!2d140.02190600187706!3d35.68995190403516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602280268a246217%3A0xe211bad93a475718!2z5rKz5YaF5bGLIOa0peeUsOayvOW6lw!5e0!3m2!1sja!2sjp!4v1699599661629!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>＜TEL＞047-476-6151
+                <br>＜住所＞千葉県習志野市津田沼1-3-1<br>　　　　ミーナ津田沼1F</p>
+            <p>---------------------------------------</p>
+                <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.2369947227771!2d140.02190600187706!3d35.68995190403516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602280268a246217%3A0xe211bad93a475718!2z5rKz5YaF5bGLIOa0peeUsOayvOW6lw!5e0!3m2!1sja!2sjp!4v1699599661629!5m2!1sja!2sjp" width="300" height="300" style="border:0;"></iframe>
+            </div>
         </section>
         <section id="section3">
-            <h2>KALDI COFFEE FARM<br>イオンモール津田沼店</h2>
+            <h2>KALDI <br>COFFEE FARM<br>イオンモール津田沼店</h2>
             <img src="カルディ2.jpg" alt="画像の代わりとなるテキスト入力します" width="400">
             <p>JR総武線「津田沼駅」北口より徒歩3分、新京成線「新津田沼駅」から徒歩3分以内にあるショッピングモール「イオンモール津田沼店」の1階、Food Streetにある「KALDI COFFEE FARM」。洋服や娯楽施設、スーパーがあり、とても便利な場所です。スーパーは24時間営業のため、深夜帰りのお酒にぴったり😍</p>
             <img src="カルディ1.jpg" alt="画像の代わりとなるテキスト入力します" width="400">
             <p>その中でもワイン好きな方におすすめなのがKALDI COFFEE FARM。お店に置いてあるお酒の8割はなんとワイン！赤ワインはもちろん、白ワインも置いてあるためワイン好きな方はまさに楽園です💖もちろんワインに合うおつまみも取り揃えてあり、とってもおすすめです！</p>
+            <p>---------------------------------------</p>
             <p>＜営業時間＞AM10:00～PM9:00
-                <br>＜TEL＞：047-455-6238
-                <br>＜住所＞：千葉県習志野市津田沼1-23-1<br>イオンモール津田沼1F　Food Street</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.2299062175935!2d140.02360627639624!3d35.69030087300174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602280242ee9c22d%3A0x612b2321778ae3c6!2z44Kr44Or44OH44Kj44Kz44O844OS44O844OV44Kh44O844OgIOOCpOOCquODs-ODouODvOODq-a0peeUsOayvOW6lw!5e0!3m2!1sja!2sjp!4v1699600013450!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>＜TEL＞047-455-6238
+                <br>＜住所＞千葉県習志野市津田沼1-23-1<br>　　　　イオンモール津田沼1F<br>　　　　Food Street</p>
+            <p>---------------------------------------</p>
+                <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.2299062175935!2d140.02360627639624!3d35.69030087300174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602280242ee9c22d%3A0x612b2321778ae3c6!2z44Kr44Or44OH44Kj44Kz44O844OS44O844OV44Kh44O844OgIOOCpOOCquODs-ODouODvOODq-a0peeUsOayvOW6lw!5e0!3m2!1sja!2sjp!4v1699600013450!5m2!1sja!2sjp" width="300" height="300" style="border:0;"></iframe>
+            </div>
         </section>
         <section id="section4">
             <h2>金二商事（株）<br>セブンイレブン津田沼店</h2>
@@ -89,10 +109,14 @@
                 <br>こんなセブンイレブン見たことありますか？見たことないですよね。
                 <br>だってこのセブンイレブンは唯一無二のセブンイレブンですからね！
             </p>
+            <p>---------------------------------------</p>
             <p>＜営業時間＞24時間営業
-                <br>＜TEL＞：047-452-0121
-                <br>＜住所＞：千葉県習志野市津田沼6-13-9<br>セブンイレブン津田沼店</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2196904999361!2d140.02149416408918!3d35.6799871259721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022802b07d233f3%3A0x9eb1792a212b6866!2z6YeR5LqM5ZWG5LqL77yI5qCq77yJ!5e0!3m2!1sja!2sjp!4v1699602032290!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>＜TEL＞047-452-0121
+                <br>＜住所＞千葉県習志野市津田沼6-13-9<br>　　　　セブンイレブン津田沼店</p>
+            <p>---------------------------------------</p>
+                <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2196904999361!2d140.02149416408918!3d35.6799871259721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022802b07d233f3%3A0x9eb1792a212b6866!2z6YeR5LqM5ZWG5LqL77yI5qCq77yJ!5e0!3m2!1sja!2sjp!4v1699602032290!5m2!1sja!2sjp" width="300" height="300" style="border:0;"></iframe>
+            </div>
         </section>
         <section id="section5">
             <h2>新宅酒店</h2>
@@ -100,16 +124,20 @@
             <p>京成線「京成津田沼駅」から徒歩6分にある「新宅酒店」。写真の通り、見やすい位置に看板があるためとってもわかりやすいです。
                 <br>お酒の品揃えは焼酎や日本酒、瓶ビールなどの瓶系を置いてあります。他にもおせんべいやカップ麺もおいてあります。
             </p>
-            <p>＜営業時間＞AM9:00～PM5:30　(定休日:日曜日)
-                <br>＜TEL＞：047-452-3370
-                <br>＜住所＞：千葉県習志野市津田沼6-13-19</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2146171145178!2d140.02217392683264!3d35.68048677422574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022802b9d8d884f%3A0x2d521a58344d54d!2z5paw5a6F6YWS5bqX!5e0!3m2!1sja!2sjp!4v1699602129072!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>---------------------------------------</p>
+            <p>＜営業時間＞AM9:00～PM5:30<br>　　　　　　(定休日:日曜日)
+                <br>＜TEL＞047-452-3370
+                <br>＜住所＞千葉県習志野市<br>　　　　津田沼6-13-19</p>
+            <p>---------------------------------------</p>
+                <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.2146171145178!2d140.02217392683264!3d35.68048677422574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022802b9d8d884f%3A0x2d521a58344d54d!2z5paw5a6F6YWS5bqX!5e0!3m2!1sja!2sjp!4v1699602129072!5m2!1sja!2sjp" width="300" height="300" style="border:0;"></iframe>
+            </div>
         </section>
         <!-- 必要なセクションを追加 -->
     </main>
 
     <footer>
-        <p>Copyright © 2023 津田沼の魅力　ホームページ</p>
+        Copyright © 2023 津田沼の魅力
     </footer>
 
     <!-- ここにはJavaScriptやその他のフッター情報を追加できます -->
