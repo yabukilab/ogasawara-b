@@ -173,3 +173,16 @@ html {
 .center-align {
     text-align:center;
 }
+
+.iframe-wrp {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* = height ÷ width × 100 */
+  }
+  .iframe-wrp iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
