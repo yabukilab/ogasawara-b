@@ -58,7 +58,8 @@ ul{
 .example-element {
     border: 1.5px solid #000; /* 緑の実線の枠線 */
     border-radius: 5px; /* 角丸 */
-    margin-left: -8%;
+    position: relative;
+    left: -25px; /* 要素を左に10px移動 */
 }
 li{
     text-align: center;
