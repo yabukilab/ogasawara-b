@@ -59,8 +59,8 @@ html {
     margin-bottom: 120px;
   }
   .title {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight:bold;
     color:black;
     margin-bottom: 40px;
   }
@@ -114,6 +114,7 @@ html {
     font-weight: 700;
     margin-bottom: 24px;
   }
+  
   
   @media only screen and (max-width: 768px) {
     .column-40 {
