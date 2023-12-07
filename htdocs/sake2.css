@@ -59,14 +59,16 @@ ul{
     border: 1.5px solid #000; /* 緑の実線の枠線 */
     border-radius: 5px; /* 角丸 */
     position: relative;
-    left: -20px; /* 要素を左に10px移動 */
+    left: 0%; /* 要素を左に10px移動 */
+    padding-left: 10px; /* テキストの左側に10pxの余白を追加 */
+    
 }
 li{
     text-align: center;
 }
 
 span{
-    font-size: 110%;
+    font-size: 130%;
 }
 
 html {
