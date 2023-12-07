@@ -169,3 +169,7 @@ html {
     }
   }
   
+/* オリジナル */
+.center-align {
+    text-align:center;
+}
