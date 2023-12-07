@@ -16,13 +16,13 @@ img {
     margin: 0 auto;
 }
 .left-align {
-    text-align:left;
+    text-align: left;
 }
 .map-container {
-    margin-left: -8%;
+    text-align: center;
 }
 p{
-    margin-left: -8%;;
+    text-align: center;;
 }
 h2{
     background-color: #333;
