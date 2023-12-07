@@ -60,15 +60,24 @@ ul{
     border-radius: 5px; /* 角丸 */
     position: relative;
     left: 0%; /* 要素を左に10px移動 */
-    padding-left: 10px; /* テキストの左側に10pxの余白を追加 */
-    
+    padding-left: 10px; /* テキストの左側に10pxの余白を追加 */  
 }
-li{
-    text-align: center;
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* 画像間の余白（必要に応じて調整） */
+}
+
+.image-container img {
+  width: 49%; /* 各画像の幅（余白を含む） */
+  border-radius: 20px; /* 画像の角を丸くする（必要に応じて調整） */
 }
 
 span{
     font-size: 130%;
+}
+img{
+  border-radius: 20px;
 }
 
 html {
