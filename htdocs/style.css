@@ -1,21 +1,24 @@
+/* 文書全体のフォント指定 */
 html {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-.pop {font-family: 'Poppins', sans-serif;}
+.pop {
+  font-family: 'Poppins', sans-serif;
+}
 
 .container {
   width: 90%;
   max-width: 1120px;
   margin: 0 auto;
-  position: relative;
+  position: relative;  /*位置調整 */
 }
 
 .flex{
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-between;  /*間隔均等*/
+  flex-wrap: wrap;  /*改行*/
+  align-items: center;  /*中央揃え*/
 }
 
 /* ヘッダー */
@@ -25,7 +28,7 @@ header {
 .logo {
   font-size: 30px;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.04em; /* 文字間隔 狭く*/
 }
 .logo span {
   color:rgb(1, 122, 203);
@@ -46,11 +49,11 @@ header {
  }
  
  ul{
-  list-style: none;
+  list-style: none;  /*ドット非表示*/
 }
 
 a{
-  text-decoration: none;
+  text-decoration: none;  /*下線非表示*/
   color:black;
   font-size: 20px;
   font-weight:600
@@ -60,17 +63,16 @@ a{
 #hero {
   background-image: url("R.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: cover;  /*余白が発生しないように画像調整*/
   height: 540px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
+  border-radius: 30px;  /*角丸く*/
+  display: flex;  
+  align-items: center;  /*子要素中央揃え*/
   margin-bottom: 90px;
-  overflow: hidden;
+  overflow: hidden;  /*はみ出た部分を非表示*/
 }
 
 .hero_inner {
-  z-index: 2;
   color: #ffffff;
   width: 100%;
   text-align: center;
@@ -106,7 +108,7 @@ a{
   width: 48%;
 }
 .text {
-  line-height: 2;
+  line-height: 2;  /*行の高さ*/
 }
 
 @media only screen and (max-width: 768px) {
