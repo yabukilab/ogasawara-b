@@ -28,7 +28,7 @@
     <a href="signin.php">情報工学科</a><br>
     <a href="signin.php">情報ネットワーク学科</a><br>
     <a href="signin.php">経営情報科学科</a><br>
-    <a href="signin.php">プロジェクトマネジメント学</a><br>
+    <a href="signin.php">プロジェクトマネジメント学科</a><br>
     <a href="signin.php">金融・経営リスク科学科</a><br>
 </body>
 
