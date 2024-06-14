@@ -24,22 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // データの検証（空でないかチェック）
     if ($user && $pass) {
         // ユーザ名とパスワードのチェック
-        $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
+        $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
         $stmt->bind_param("s", $user);
         $stmt->execute();
-        $stmt->bind_result($db_pass);
+        $stmt->bind_result($user_id, $db_pass);
         $stmt->fetch();
         $stmt->close();
 
         if ($db_pass) {
             if (password_verify($pass, $db_pass)) { // パスワードがハッシュ化されている場合
                 // ログイン成功
-                echo "ログイン成功";
-                // セッションを開始
                 session_start();
+                $_SESSION['user_id'] = $user_id;
                 $_SESSION['username'] = $user;
-                // keijiban.phpにリダイレクト
-                header("Location: http://localhost/PMensyuu/keijiban.php");
+                // menu.phpにリダイレクト
+                header("Location: menu.php");
                 exit();
             } else {
                 // パスワードが一致しない
