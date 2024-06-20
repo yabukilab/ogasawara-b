@@ -1,5 +1,5 @@
 <?php
- require 'db.php';
+require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
@@ -9,32 +9,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // データの検証（空でないかチェック）
     if ($user && $pass) {
         // ユーザ名とパスワードのチェック
-        $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
-        $stmt->bind_param("s", $user);
-        $stmt->execute();
-        $stmt->bind_result($user_id, $db_pass);
-        $stmt->fetch();
-        $stmt->close();
+        $sql = 'SELECT * FROM users';
+        $prepare = $db->prepare($sql);
+        //$stmt->bind_param("s", $user);
+        $prepare->execute();
+        //$stmt->bind_result($user_id, $db_pass);
+        //$stmt->fetch();
+        $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        //$stmt->close();
 
-        if ($db_pass) {
-            if (password_verify($pass, $db_pass)) { // パスワードがハッシュ化されている場合
-                // ログイン成功
-                session_start();
-                $_SESSION['user_id'] = $user_id;
-                $_SESSION['username'] = $user;
-                // menu.phpにリダイレクト
-                header("Location: menu.php");
-                exit();
+        foreach ($result as $row) {
+            $db_pass = h($row['password']);
+            $user_name = h($row['username']);
+            if ($user == $user_name) {
+                if (password_verify($pass, $db_pass)) { // パスワードがハッシュ化されている場合
+                    // ログイン成功
+                    session_start();
+                    $_SESSION['user_id'] = $user_id;
+                    $_SESSION['username'] = $user;
+                    // menu.phpにリダイレクト
+                    header("Location: menu.php");
+                    exit();
+                } else {
+                    // パスワードが一致しない
+                    $err_msg = "ユーザ名またはパスワードが間違っています。";
+                }
             } else {
-                // パスワードが一致しない
+                // ユーザ名が見つからない
                 $err_msg = "ユーザ名またはパスワードが間違っています。";
             }
-        } else {
-            // ユーザ名が見つからない
-            $err_msg = "ユーザ名またはパスワードが間違っています。";
         }
-    } else {
-        $err_msg = "全てのフィールドを入力してください。";
     }
 }
 
