@@ -1,8 +1,8 @@
 <?php
 // データベース接続情報
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "testuser";
+$password = "pass";
 $dbname = "sample";
 
 // エラーメッセージの初期化
