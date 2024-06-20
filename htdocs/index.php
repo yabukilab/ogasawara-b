@@ -1,20 +1,5 @@
 <?php
-// データベース接続情報
-$servername = "localhost";
-$username = "testuser";
-$password = "pass";
-$dbname = "sample";
-
-// エラーメッセージの初期化
-$err_msg = "";
-
-// 接続を作成
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 接続をチェック
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+ require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
@@ -53,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+//$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -69,9 +54,9 @@ $conn->close();
 
     <h1>ログイン</h1>
     <form action="" method="POST">
-        <?php if ($err_msg !== "") {
+        <!--<?php if ($err_msg !== "") {
             echo "<div style='color: red;'>$err_msg</div><br>";
-        } ?>
+        } ?>-->
         <div class="name">
             ユーザ名<input type="text" name="username" value=""><br>
         </div>
