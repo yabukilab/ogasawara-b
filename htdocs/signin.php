@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt->execute()) {
                     echo "新規登録が完了しました。";
                     // 登録が完了したらリダイレクト
-                    header("Location: http://localhost/PMensyuu/index.php");
+                    header("Location: http://localhost/keijiban/ogasawara-b/htdocs/login.php");
                     exit();
                 } else {
                     echo "エラー: " . $stmt->error;
