@@ -1,8 +1,8 @@
 <?php
 // データベース接続情報
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "testuser";
+$password = "pass";
 $dbname = "mydb";
 
 // 接続を作成
