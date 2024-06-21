@@ -1,17 +1,5 @@
 <?php
-// データベース接続情報
-$servername = "localhost";
-$username = "testuser";
-$password = "pass";
-$dbname = "mydb";
-
-// 接続を作成
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 接続をチェック
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
@@ -26,42 +14,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 
         // ユーザ名の重複チェック
-        $checkStmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
-        $checkStmt->bind_param("s", $user);
-        $checkStmt->execute();
-        $checkStmt->bind_result($count);
-        $checkStmt->fetch();
-        $checkStmt->close();
+        $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
+        $stmt->execute([$user]);
+        $count = $stmt->fetchColumn();
 
         if ($count > 0) {
             echo "エラー: ユーザ名が既に存在します。";
         } else {
             // SQLインジェクションを防ぐためにプリペアドステートメントを使用
-            $stmt = $conn->prepare("INSERT INTO users (username, password, gakubu, gakka) VALUES (?, ?, ?, ?)");
-            if ($stmt) {
-                $stmt->bind_param("ssss", $user, $hashed_pass, $gakubu, $gakka);
-                if ($stmt->execute()) {
-                    echo "新規登録が完了しました。";
-                    // 登録が完了したらリダイレクト
-                    header("Location: http://localhost/keijiban/ogasawara-b/htdocs/login.php");
-                    exit();
-                } else {
-                    echo "エラー: " . $stmt->error;
-                }
-                $stmt->close();
+            $stmt = $db->prepare("INSERT INTO users (username, password, gakubu, gakka) VALUES (?, ?, ?, ?)");
+            if ($stmt->execute([$user, $hashed_pass, $gakubu, $gakka])) {
+                echo "新規登録が完了しました。";
+                // 登録が完了したらリダイレクト
+                header("Location: http://localhost/keijiban/ogasawara-b/htdocs/login.php");
+                exit();
             } else {
-                echo "ステートメントの準備に失敗しました: " . $conn->error;
+                echo "エラー: " . $stmt->errorInfo()[2];
             }
         }
     } else {
         echo "全てのフィールドを入力してください。";
     }
 }
-
-$conn->close();
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
