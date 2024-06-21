@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "sample";
+$dbname = "mydb";
 
 // 接続を作成
 $conn = new mysqli($servername, $username, $password, $dbname);
