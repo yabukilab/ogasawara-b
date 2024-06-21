@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->execute([$user, $hashed_pass, $gakubu, $gakka])) {
                 echo "新規登録が完了しました。";
                 // 登録が完了したらリダイレクト
-                header("Location: http://localhost/keijiban/ogasawara-b/htdocs/login.php");
+                header("Location: http://localhost/keijiban/ogasawara-b/htdocs/index.php");
                 exit();
             } else {
                 echo "エラー: " . $stmt->errorInfo()[2];
