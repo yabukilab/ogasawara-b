@@ -9,40 +9,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // データの検証（空でないかチェック）
     if ($user && $pass) {
         // ユーザ名とパスワードのチェック
-        $sql = 'SELECT * FROM users';
+        $sql = 'SELECT * FROM users WHERE username = :username';
         $prepare = $db->prepare($sql);
-        //$stmt->bind_param("s", $user);
+        $prepare->bindParam(':username', $user, PDO::PARAM_STR);
         $prepare->execute();
-        //$stmt->bind_result($user_id, $db_pass);
-        //$stmt->fetch();
-        $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
-        //$stmt->close();
+        $result = $prepare->fetch(PDO::FETCH_ASSOC);
 
-        foreach ($result as $row) {
-            $db_pass = h($row['password']);
-            $user_name = h($row['username']);
-            if ($user == $user_name) {
-                if (password_verify($pass, $db_pass)) { // パスワードがハッシュ化されている場合
-                    // ログイン成功
-                    session_start();
-                    $_SESSION['user_id'] = $user_id;
-                    $_SESSION['username'] = $user;
-                    // menu.phpにリダイレクト
-                    header("Location: menu.php");
-                    exit();
-                } else {
-                    // パスワードが一致しない
-                    $err_msg = "ユーザ名またはパスワードが間違っています。";
-                }
+        if ($result) {
+            $db_pass = $result['password'];
+            if (password_verify($pass, $db_pass)) { // パスワードがハッシュ化されている場合
+                // ログイン成功
+                session_start();
+                $_SESSION['user_id'] = $result['id'];
+                $_SESSION['username'] = $user;
+                // menu.phpにリダイレクト
+                header("Location: menu.php");
+                exit();
             } else {
-                // ユーザ名が見つからない
+                // パスワードが一致しない
                 $err_msg = "ユーザ名またはパスワードが間違っています。";
             }
+        } else {
+            // ユーザ名が見つからない
+            $err_msg = "ユーザ名またはパスワードが間違っています。";
         }
+    } else {
+        $err_msg = "ユーザ名とパスワードを入力してください。";
     }
 }
-
-//$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -58,9 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <h1>ログイン</h1>
     <form action="" method="POST">
-        <!--<?php if ($err_msg !== "") {
+        <?php if (isset($err_msg) && $err_msg !== "") {
             echo "<div style='color: red;'>$err_msg</div><br>";
-        } ?>-->
+        } ?>
         <div class="name">
             ユーザ名<input type="text" name="username" value=""><br>
         </div>
