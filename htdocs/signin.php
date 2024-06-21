@@ -1,5 +1,5 @@
 <?php
-require'db.php';
+require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: http://localhost/keijiban/ogasawara-b/htdocs/index.php");
                 exit();
             } else {
-                echo "エラー: " . $stmt->errorInfo()[2];
+                echo "エラー: " . h($stmt->errorInfo()[2]);
             }
         }
     } else {
