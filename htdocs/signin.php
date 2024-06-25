@@ -2,7 +2,7 @@
 // db.php ファイルの内容
 try {
     // PDOを使用してデータベースに接続
-    $db = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'testuser', 'pass');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo '接続失敗: ' . $e->getMessage();
