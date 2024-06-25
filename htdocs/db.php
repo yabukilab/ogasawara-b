@@ -16,7 +16,7 @@ function h($var)
 $dbServer = '127.0.0.1'; // データベースサーバーのホスト名
 $dbUser = isset($_SERVER['MYSQL_USER']) ? $_SERVER['MYSQL_USER'] : 'root'; // 環境変数 'MYSQL_USER' が設定されていればその値を使用、なければ 'testuser' を使用
 $dbPass = isset($_SERVER['MYSQL_PASSWORD']) ? $_SERVER['MYSQL_PASSWORD'] : ''; // 環境変数 'MYSQL_PASSWORD' が設定されていればその値を使用、なければ 'pass' を使用
-$dbName = isset($_SERVER['MYSQL_DB']) ? $_SERVER['MYSQL_DB'] : 'mydb(1)'; // 環境変数 'MYSQL_DB' が設定されていればその値を使用、なければ 'mydb' を使用
+$dbName = isset($_SERVER['MYSQL_DB']) ? $_SERVER['MYSQL_DB'] : 'mydb'; // 環境変数 'MYSQL_DB' が設定されていればその値を使用、なければ 'mydb' を使用
 
 # データベースソースネーム（DSN）の設定
 $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8"; // DSNにはデータベースの種類、ホスト名、データベース名、文字セットを含める
