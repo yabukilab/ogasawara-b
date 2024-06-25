@@ -1,4 +1,3 @@
-// index.php
 <?php
 require 'db.php'; // データベース接続を含むファイルをインクルード
 
