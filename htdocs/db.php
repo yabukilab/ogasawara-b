@@ -1,3 +1,4 @@
+// db.php
 <?php
 
 # HTMLでのエスケープ処理をする関数（データベースとは無関係だが，ついでにここで定義しておく．）
@@ -14,8 +15,8 @@ function h($var)
 
 # データベース接続情報の設定
 $dbServer = '127.0.0.1'; // データベースサーバーのホスト名
-$dbUser = isset($_SERVER['MYSQL_USER']) ? $_SERVER['MYSQL_USER'] : 'root'; // 環境変数 'MYSQL_USER' が設定されていればその値を使用、なければ 'testuser' を使用
-$dbPass = isset($_SERVER['MYSQL_PASSWORD']) ? $_SERVER['MYSQL_PASSWORD'] : ''; // 環境変数 'MYSQL_PASSWORD' が設定されていればその値を使用、なければ 'pass' を使用
+$dbUser = isset($_SERVER['MYSQL_USER']) ? $_SERVER['MYSQL_USER'] : 'testuser'; // 環境変数 'MYSQL_USER' が設定されていればその値を使用、なければ 'testuser' を使用
+$dbPass = isset($_SERVER['MYSQL_PASSWORD']) ? $_SERVER['MYSQL_PASSWORD'] : 'pass'; // 環境変数 'MYSQL_PASSWORD' が設定されていればその値を使用、なければ 'pass' を使用
 $dbName = isset($_SERVER['MYSQL_DB']) ? $_SERVER['MYSQL_DB'] : 'mydb'; // 環境変数 'MYSQL_DB' が設定されていればその値を使用、なければ 'mydb' を使用
 
 # データベースソースネーム（DSN）の設定
@@ -31,5 +32,5 @@ try {
 } catch (PDOException $e) {
   # データベース接続エラー時の処理
   echo "Can't connect to the database: " . h($e->getMessage()); // 接続エラーが発生した場合、エラーメッセージをエスケープして表示
+  exit(); // スクリプトを終了
 }
-

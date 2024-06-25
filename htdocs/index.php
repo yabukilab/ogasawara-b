@@ -1,5 +1,11 @@
+// index.php
 <?php
 require 'db.php'; // データベース接続を含むファイルをインクルード
+
+if (!isset($db)) {
+    // データベース接続が確立されていない場合の処理
+    die("Database connection not established.");
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // フォームがPOSTリクエストで送信されたかどうかを確認
     // フォームからデータを取得
