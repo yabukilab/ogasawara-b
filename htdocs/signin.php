@@ -1,5 +1,13 @@
 <?php
-require 'db.php';
+// db.php ファイルの内容
+try {
+    // PDOを使用してデータベースに接続
+    $db = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'password');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo '接続失敗: ' . $e->getMessage();
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
@@ -29,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: http://localhost/keijiban/ogasawara-b/htdocs/index.php");
                 exit();
             } else {
-                echo "エラー: " . h($stmt->errorInfo()[2]);
+                echo "エラー: " . htmlspecialchars($stmt->errorInfo()[2], ENT_QUOTES, 'UTF-8');
             }
         }
     } else {
