@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <title>新規登録</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="st2.css">
 </head>
 
 <body>
