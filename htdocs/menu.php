@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>掲示板一覧</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="st3.css">
 </head>
 
 <body>
