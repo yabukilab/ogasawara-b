@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>掲示板一覧</title>
-    <link rel="stylesheet" class="button" href="st3.css">
+    <link rel="stylesheet" class="button" href="keijiban.css">
 </head>
 
 <body>
