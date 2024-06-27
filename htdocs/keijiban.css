@@ -1,62 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+    color: 212222;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
+    background-color: #d7e7f6;
 }
 
-.post-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
 }
-
-.post-form input,
-.post-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-#posts {
-    margin-top: 20px;
-}
-
-.post {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-}
-
-.post .name {
-    font-weight: bold;
-}
-
-.post .message {
-    margin: 5px 0 0 0;
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
 }
