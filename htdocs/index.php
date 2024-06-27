@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // フォームがPOSTリクエス�
 <head>
     <meta charset="utf-8">
     <title>ログイン</title>
-    <link rel="stylesheet" href="style.css"> <!-- スタイルシートをリンク -->
+    <link rel="stylesheet" href="keijiban.css"> <!-- スタイルシートをリンク -->
 </head>
 
 <body>
