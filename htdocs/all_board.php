@@ -12,8 +12,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // セッションからユーザIDを取得
 $user_id = $_SESSION['user_id'];
+
 // ユーザ情報を取得するためのSQL準備と実行
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
+$stmt = $db->prepare("SELECT * FROM users WHERE id = :id");
 $stmt->execute(['id' => $user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -33,18 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // タイトルと内容が空でないか確認
     if (!empty($title) && !empty($content)) {
         // 新規投稿をデータベースに挿入
-        $stmt = $pdo->prepare("INSERT INTO posts (title, content, user_id, department) VALUES (:title, :content, :user_id, :department)");
+        $stmt = $db->prepare("INSERT INTO posts (title, content, user_id, department) VALUES (:title, :content, :user_id, :department)");
         $stmt->execute(['title' => $title, 'content' => $content, 'user_id' => $user_id, 'department' => $department]);
     }
 }
 
 // 全ての投稿を取得するSQLクエリを実行
-$allPostsStmt = $pdo->query("SELECT posts.*, users.username FROM posts JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC");
+$allPostsStmt = $db->query("SELECT posts.*, users.username FROM posts JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC");
 $allPosts = $allPostsStmt->fetchAll(PDO::FETCH_ASSOC);
 
 // ページのタイトルと見出しを設定
 $title = "全体掲示板";
 $heading = "全体掲示板";
+
 // ヘッダーファイルをインクルード
 require 'header.php';
 ?>
