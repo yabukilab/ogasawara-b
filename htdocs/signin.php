@@ -1,5 +1,5 @@
 <?php
-require 'db.php'; // データベース接続情報を含むファイルをインクルード
+require 'db2.php'; // データベース接続情報を含むファイルをインクルード
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームからデータを取得
