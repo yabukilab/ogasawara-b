@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-06-25 10:53:39
+-- 生成日時: 2024-06-27 08:02:22
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -177,7 +177,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `gakubu`, `gakka`, `created_a
 (6, 'user5', '$2y$10$vGGMJcq1Lf3BR', 'senshin', 'mirobo', '2024-06-06 06:11:23', NULL),
 (7, 'user7', '$2y$10$0fQelgSp0Bzg2', 'mirai', 'dejihen', '2024-06-14 08:52:36', NULL),
 (8, 'user8', '$2y$10$pDEx3Obu7dzZJ', 'shakai', 'pm', '2024-06-20 06:18:53', NULL),
-(9, 'user19', '$2y$10$mHpNjlRj9606tqrmfolXRObv/VHisrUoxk48awf7vtVpTSVvBSy4m', 'kougaku', 'sen', '2024-06-21 12:28:27', NULL);
+(9, 'user19', '$2y$10$mHpNjlRj9606tqrmfolXRObv/VHisrUoxk48awf7vtVpTSVvBSy4m', 'kougaku', 'sen', '2024-06-21 12:28:27', NULL),
+(10, 'user11', '$2y$10$ejhXYpgJISx.EVzq/RJUnuqrp.DubSL7KSSs6z0Y0r82n4H1q1ZrK', 'kougaku', 'den', '2024-06-25 09:06:21', NULL),
+(11, 'user12', '$2y$10$uTIpZT1E/s0VKcAaeCkYhek93OR.eIVyJYiaLKa99A3kREMmwJ0S2', 'kougaku', 'ut', '2024-06-27 05:59:19', NULL);
 
 --
 -- ダンプしたテーブルのインデックス
@@ -258,7 +260,7 @@ ALTER TABLE `table1`
 -- テーブルの AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
