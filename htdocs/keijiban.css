@@ -1,19 +1,24 @@
-body {
-    color: 212222;
-    font-family: "Zen Maru Gothic", serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    background-color: #d7e7f6;
+/* ボタンの基本スタイル */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  font-size: 16px;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.btn--orange,
-a.btn--orange {
-  color: #fff;
-  background-color: #eb6100;
+/* ボタンホバー時のスタイル */
+.button:hover {
+  background-color: #0056b3;
 }
-.btn--orange:hover,
-a.btn--orange:hover {
-  color: #fff;
-  background: #f56500;
+
+/* ボタンをブロック要素として扱い、中央揃えにする */
+.button-container {
+  margin-top: 20px;
 }
