@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <button>
     <a href="all_board.php">全体掲示板</a><br>
     <a href="signin.php">宇宙・半導体工学科</a><br>
     <a href="signin.php">先端材料工学科</a><br>
@@ -30,6 +31,7 @@
     <a href="signin.php">経営情報科学科</a><br>
     <a href="signin.php">プロジェクトマネジメント学科</a><br>
     <a href="signin.php">金融・経営リスク科学科</a><br>
+    </button>
 </body>
 
 </html>
