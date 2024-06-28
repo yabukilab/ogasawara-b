@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"href="st4.css">
+    </head>
+</html>
+
 <?php
 require 'db.php';
 session_start();
