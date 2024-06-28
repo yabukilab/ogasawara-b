@@ -1,12 +1,6 @@
 body{
-<<<<<<< HEAD
-  background-color: #f4f4f4;
-}
-
-=======
   background-color: #d7e7f6;
 }
->>>>>>> ea54838c5895877d10962c6ecb87d2e7067046fa
 /* ボタンの基本スタイル */
 .button {
   display: inline-flex;
@@ -15,13 +9,8 @@ body{
   width: 250px; /* 統一された幅 */
   height: 50px; /* 統一された高さ */
   font-size: 16px;
-<<<<<<< HEAD
-  color: rgb(0, 0, 0);
-  background-color: #ffffff;
-=======
   color: white;
   background-color: #070707;
->>>>>>> ea54838c5895877d10962c6ecb87d2e7067046fa
   border: none;
   border-radius: 5px;
   text-align: center;
