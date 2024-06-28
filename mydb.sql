@@ -55,7 +55,7 @@ CREATE TABLE `posts` (
   `user_id` int(11) DEFAULT NULL,
   `department` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,'あああ','あああ','2024-06-07 10:38:31',NULL,NULL),(2,'あああ','あああ','2024-06-07 10:38:35',NULL,NULL),(3,'あああ','あああ','2024-06-07 10:43:58',NULL,NULL),(4,'aaaa','aaaa\r\naaaa','2024-06-07 10:47:49',NULL,NULL),(5,'ああああ','ああああ','2024-06-14 07:01:58',1,NULL),(6,'あああ','あああ','2024-06-14 07:38:26',1,NULL),(7,'zaaa','adfjhdfkpa','2024-06-20 05:18:42',1,NULL),(8,'zaaa','adfjhdfkpa','2024-06-20 05:23:37',1,NULL);
+INSERT INTO `posts` VALUES (1,'あああ','あああ','2024-06-07 10:38:31',NULL,NULL),(2,'あああ','あああ','2024-06-07 10:38:35',NULL,NULL),(3,'あああ','あああ','2024-06-07 10:43:58',NULL,NULL),(4,'aaaa','aaaa\r\naaaa','2024-06-07 10:47:49',NULL,NULL),(5,'ああああ','ああああ','2024-06-14 07:01:58',1,NULL),(6,'あああ','あああ','2024-06-14 07:38:26',1,NULL),(7,'zaaa','adfjhdfkpa','2024-06-20 05:18:42',1,NULL),(8,'zaaa','adfjhdfkpa','2024-06-20 05:23:37',1,NULL),(9,'テスト','こんにちは','2024-06-27 08:41:31',1,NULL),(10,'テスト','こんにちは','2024-06-27 08:43:13',1,NULL),(11,'あああ','っくぇｒｄｓｗ','2024-06-27 08:43:24',1,NULL),(12,'テスト','こんにちは','2024-06-27 09:03:06',1,NULL),(13,'aaa','qqqqq','2024-06-27 11:24:30',1,NULL);
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,12 +159,12 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `gakubu` varchar(50) NOT NULL,
-  `gakka` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `faculty` varchar(255) DEFAULT NULL,
+  `department` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'user1','$2y$10$EpZZjRXb4nKDMHVGq/FHh.uPGIXEh0a1fOGLaaauldR3WcvCvkLje','shakai','pm','2024-06-27 07:33:41'),(2,'user2','$2y$10$m.leWOn950/6pmZJeFgUnOI111ZbBuL2oGL9eSJLmR6S5C9bijBd2','kougaku','ut','2024-06-27 08:12:46');
+INSERT INTO `users` VALUES (1,'user3','$2y$10$hI2BHS1navT.Fv1zl6JIs.NcUGMXcgzDgMvzeoDLee9hviUbi6YGe','2024-06-28 08:39:26','shakai','pm'),(2,'user4','$2y$10$vIRkHNNzyM8GfBcuqW22uuljaeXHiBL9hP.OsQQH.e0ZEgb3Ug2tG','2024-06-28 08:40:04','souzou','ken'),(3,'user1','$2y$10$hBlxWLUruau392yv7o/C3eMLYHysxLtDnflBz8SDS62lk6n1PMAsy','2024-06-28 08:43:32','senshin','seimei');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-27 17:24:16
+-- Dump completed on 2024-06-28 17:43:53
