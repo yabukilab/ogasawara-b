@@ -10,7 +10,7 @@
 <body>
     <div class="button-container">
         <a class="button" href="all_board.php">全体掲示板</a><br>
-        <a class="button" href="signin.php">宇宙・半導体工学科</a><br>
+        <a class="button" href="dept_board.php">宇宙・半導体工学科</a><br>
         <a class="button" href="signin.php">先端材料工学科</a><br>
         <a class="button" href="signin.php">電気電子工学科</a><br>
         <a class="button" href="signin.php">情報通信システム工学科</a><br>

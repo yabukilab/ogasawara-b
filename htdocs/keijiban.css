@@ -1,11 +1,15 @@
+body{
+  background-color: #f4f4f4;
+}
+
 /* ボタンの基本スタイル */
 .button {
   display: inline-block;
   padding: 10px 20px;
   margin: 10px 5px;
   font-size: 16px;
-  color: white;
-  background-color: #007BFF;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -15,7 +19,7 @@
 
 /* ボタンホバー時のスタイル */
 .button:hover {
-  background-color: #0056b3;
+  background-color: #bebebe;
 }
 
 /* ボタンをブロック要素として扱い、中央揃えにする */
