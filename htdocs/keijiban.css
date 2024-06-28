@@ -3,9 +3,11 @@ body{
 }
 /* ボタンの基本スタイル */
 .button {
-  display: inline-block;
+  display: inline-flex;
   padding: 10px 30px;
   margin: 10px 5px;
+  width: 250px; /* 統一された幅 */
+  height: 50px; /* 統一された高さ */
   font-size: 16px;
   color: white;
   background-color: #070707;
@@ -14,8 +16,9 @@ body{
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 中央揃え */
 }
-
 /* ボタンホバー時のスタイル */
 .button:hover {
   background-color: #0056b3;
