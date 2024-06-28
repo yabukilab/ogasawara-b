@@ -1,3 +1,42 @@
+<?php
+require 'db.php'; // データベース接続情報を含むファイルをインクルード
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // フォームからデータを取得
+    $user = $_POST["username"] ?? '';
+    $pass = $_POST["password"] ?? '';
+    $faculty = $_POST["faculty"] ?? '';
+    $department = $_POST["department"] ?? '';
+
+    // データの検証（空でないかチェック）
+    if ($user && $pass && $faculty && $department) {
+        // パスワードをハッシュ化
+        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
+
+        // ユーザ名の重複チェック
+        $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
+        $stmt->execute([$user]);
+        $count = $stmt->fetchColumn();
+
+        if ($count > 0) {
+            echo "エラー: ユーザ名が既に存在します。";
+        } else {
+            // SQLインジェクションを防ぐためにプリペアドステートメントを使用
+            $stmt = $db->prepare("INSERT INTO users (username, password, faculty, department) VALUES (?, ?, ?, ?)");
+            if ($stmt->execute([$user, $hashed_pass, $faculty, $department])) {
+                // 登録が完了したらリダイレクト
+                header("Location: http://localhost/keijiban/ogasawara-b/htdocs/index.php");
+                exit();
+            } else {
+                echo "エラー: " . $stmt->errorInfo()[2];
+            }
+        }
+    } else {
+        echo "全てのフィールドを入力してください。";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
