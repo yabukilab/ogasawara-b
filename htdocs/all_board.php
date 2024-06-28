@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"href="st3.css">
+    </head>
+</html>
 <?php
 // データベース接続ファイルをインクルード
 require 'db.php';
