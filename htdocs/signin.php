@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $db->prepare("INSERT INTO users (username, password, faculty, department) VALUES (?, ?, ?, ?)");
             if ($stmt->execute([$user, $hashed_pass, $faculty, $department])) {
                 // 登録が完了したらリダイレクト
-                header("Location: http://localhost/keijiban/ogasawara-b/htdocs/index.php");
+                header("Location: ./index.php");
                 exit();
             } else {
                 echo "エラー: " . $stmt->errorInfo()[2];
@@ -48,36 +48,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <h1>新規登録</h1>
-    <form action="" method="POST">
-        <!-- User registration fields -->
-        <label for="username">ユーザ名</label>
-        <input type="text" name="username" id="username" required><br>
-        <label for="password">パスワード</label>
-        <input type="password" name="password" id="password" required><br>
-        <label for="faculty">学部</label>
-        <select class='mainselect' name="faculty" id="faculty" required>
-            <option value="">学部を選択</option>
-            <option value='kougaku'>工学部</option>
-            <option value='souzou'>創造工学部</option>
-            <option value='senshin'>先進工学部</option>
-            <option value='jouhenkaku'>情報変革科学部</option>
-            <option value='mirai'>未来変革科学部</option>
-            <option value='jouhou'>情報科学部</option>
-            <option value='shakai'>社会システム科学部</option>
-        </select><br>
+    <div>
+        <h1>新規登録</h1>
+        <form action="" method="POST">
+            <!-- User registration fields -->
+            <label for="username">ユーザ名</label>
+            <input type="text" name="username" id="username" required><br>
+            <label for="password">パスワード</label>
+            <input type="password" name="password" id="password" required><br>
+            <label for="faculty">学部</label>
+            <select class='mainselect' name="faculty" id="faculty" required>
+                <option value="">学部を選択</option>
+                <option value='kougaku'>工学部</option>
+                <option value='souzou'>創造工学部</option>
+                <option value='senshin'>先進工学部</option>
+                <option value='jouhenkaku'>情報変革科学部</option>
+                <option value='mirai'>未来変革科学部</option>
+                <option value='jouhou'>情報科学部</option>
+                <option value='shakai'>社会システム科学部</option>
+            </select><br>
 
-        <!-- 学科のセレクトボックス -->
-        <div id="subbox-container">
-            <label for="department">学科</label>
-            <select name="department" id='department' class="subbox" required>
-                <option value=''>学科を選択</option>
-            </select>
-        </div>
+            <!-- 学科のセレクトボックス -->
+            <div id="subbox-container">
+                <label for="department">学科</label>
+                <select name="department" id='department' class="subbox" required>
+                    <option value=''>学科を選択</option>
+                </select>
+            </div>
 
-        <!-- 新規登録 button -->
-        <input type="submit" name="signin" value="新規登録">
-    </form>
+            <!-- 新規登録 button -->
+            <input type="submit" name="signin" value="新規登録">
+        </form>
+    </div>
 
     <script>
         // 学部が変更された時の処理
