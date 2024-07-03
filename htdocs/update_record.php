@@ -1,5 +1,5 @@
 <?php
-require 'db.php'; // データベース接続情報を含むファイルをインクルード
+require 'db2.php'; // データベース接続情報を含むファイルをインクルード
 
 $id = $_GET['id'] ?? null;
 if ($id === null) {
@@ -95,8 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <td>
                     <select name="department" id="department" class="subbox" required>
                         <option value="">学科を選択</option>
-                        <!-- 各学科の選択肢を追加 -->
-                        <!-- 例 -->
                         <option value="department1" <?php if ($user['department'] == 'department1')
                             echo 'selected'; ?>>
                             学科1</option>
