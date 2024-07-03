@@ -13,23 +13,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // パスワードをハッシュ化
         $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 
-        // ユーザ名の重複チェック
-        $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
-        $stmt->execute([$user]);
-        $count = $stmt->fetchColumn();
+        try {
+            // ユーザ名の重複チェック
+            $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
+            $stmt->execute([$user]);
+            $count = $stmt->fetchColumn();
 
-        if ($count > 0) {
-            echo "エラー: ユーザ名が既に存在します。";
-        } else {
-            // SQLインジェクションを防ぐためにプリペアドステートメントを使用
-            $stmt = $db->prepare("INSERT INTO users (username, password, faculty, department) VALUES (?, ?, ?, ?)");
-            if ($stmt->execute([$user, $hashed_pass, $faculty, $department])) {
-                // 登録が完了したらリダイレクト
-                header("Location: ./index.php");
-                exit();
+            if ($count > 0) {
+                echo "エラー: ユーザ名が既に存在します。";
             } else {
-                echo "エラー: " . $stmt->errorInfo()[2];
+                // SQLインジェクションを防ぐためにプリペアドステートメントを使用
+                $stmt = $db->prepare("INSERT INTO users (username, password, faculty, department) VALUES (?, ?, ?, ?)");
+                if ($stmt->execute([$user, $hashed_pass, $faculty, $department])) {
+                    // 登録が完了したらリダイレクト
+                    header("Location: ./index.php");
+                    exit();
+                } else {
+                    echo "エラー: " . $stmt->errorInfo()[2];
+                }
             }
+        } catch (PDOException $e) {
+            echo "データベースエラー: " . $e->getMessage();
         }
     } else {
         echo "全てのフィールドを入力してください。";
