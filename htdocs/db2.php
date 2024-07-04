@@ -35,15 +35,5 @@ try {
   exit;
 }
 
-# データの読み取り
-try {
-  $stmt = $db->prepare("SELECT * FROM users");
-  $stmt->execute();
-  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  foreach ($results as $row) {
-    echo h($row['id']) . " - " . h($row['username']) . " - " . "<br>";
-  }
-} catch (PDOException $e) {
-  echo "Error: " . h($e->getMessage());
-}
+
 
