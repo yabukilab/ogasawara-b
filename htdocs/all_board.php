@@ -59,8 +59,8 @@ require 'header.php';
 
 <!-- 投稿フォーム -->
 <form method="POST" action="">
-    <input type="text" name="title" placeholder="タイトル" required>
-    <textarea name="content" placeholder="内容" required></textarea>
+    <input type="text" name="title" placeholder="タイトル" required><br>
+    <textarea name="content" placeholder="内容" required></textarea><br>
     <button type="submit">投稿</button>
 </form>
 
