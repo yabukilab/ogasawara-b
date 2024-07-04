@@ -47,13 +47,3 @@ try {
   echo "Error: " . h($e->getMessage());
 }
 
-# データの書き込み
-try {
-  $stmt = $db->prepare("INSERT INTO users (username) VALUES (:username)");
-  $stmt->bindParam(':username', $username);
-  $username = 'testuser';
-  $stmt->execute();
-  echo "New record created successfully";
-} catch (PDOException $e) {
-  echo "Error: " . h($e->getMessage());
-}
