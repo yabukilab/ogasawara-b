@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </table>
 
         <!-- 新規登録 button -->
-        <input type="submit" name="signin" value="新規登録">
+            <input type="submit" name="signin" value="新規登録">
     </form>
 
     <script>
