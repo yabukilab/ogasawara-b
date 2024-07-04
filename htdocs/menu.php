@@ -19,7 +19,7 @@
         <a class="button" href="signin.php">建築学科</a><br>
         <a class="button" href="signin.php">都市環境工学科</a><br>
         <a class="button" href="signin.php">デザイン科学科</a><br>
-        <a class="button" href="signin.php">生命科学科</a><br>
+        <a class="button" href="dept_board.php">生命科学科</a><br>
         <a class="button" href="signin.php">知能メディア学科</a><br>
         <a class="button" href="signin.php">情報工学科</a><br>
         <a class="button" href="signin.php">認知情報科学</a><br>
