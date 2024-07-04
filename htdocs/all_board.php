@@ -6,7 +6,7 @@
 </html>
 <?php
 // データベース接続ファイルをインクルード
-require 'db.php';
+require 'db2.php';
 // セッションを開始
 session_start();
 
