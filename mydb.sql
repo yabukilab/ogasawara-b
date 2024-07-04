@@ -164,7 +164,7 @@ CREATE TABLE `users` (
   `department` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'user3','$2y$10$hI2BHS1navT.Fv1zl6JIs.NcUGMXcgzDgMvzeoDLee9hviUbi6YGe','2024-06-28 08:39:26','shakai','pm'),(2,'user4','$2y$10$vIRkHNNzyM8GfBcuqW22uuljaeXHiBL9hP.OsQQH.e0ZEgb3Ug2tG','2024-06-28 08:40:04','souzou','ken'),(3,'user1','$2y$10$hBlxWLUruau392yv7o/C3eMLYHysxLtDnflBz8SDS62lk6n1PMAsy','2024-06-28 08:43:32','senshin','seimei');
+INSERT INTO `users` VALUES (1,'user3','$2y$10$hI2BHS1navT.Fv1zl6JIs.NcUGMXcgzDgMvzeoDLee9hviUbi6YGe','2024-06-28 08:39:26','shakai','pm'),(2,'user4','$2y$10$vIRkHNNzyM8GfBcuqW22uuljaeXHiBL9hP.OsQQH.e0ZEgb3Ug2tG','2024-06-28 08:40:04','souzou','ken'),(3,'user1','$2y$10$hBlxWLUruau392yv7o/C3eMLYHysxLtDnflBz8SDS62lk6n1PMAsy','2024-06-28 08:43:32','senshin','seimei'),(4,'user9','$2y$10$56zdoO5es8IQsMnmwLQw8uQYNrbWnw4YwIm7PsettbPwV9peZr2gi','2024-06-28 08:55:36','souzou','tosi');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-28 17:49:14
+-- Dump completed on 2024-07-04  2:42:58
