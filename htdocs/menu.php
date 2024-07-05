@@ -6,6 +6,10 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+
+$user_id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
+$department_id = $_SESSION['department_id'];
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +26,12 @@ if (!isset($_SESSION['user_id'])) {
         h1 {
             color: red;
             text-align: center;
+        }
+
+        /* ユーザー情報のスタイル */
+        .user-info {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         /* ボタンの基本スタイル */
@@ -58,9 +68,14 @@ if (!isset($_SESSION['user_id'])) {
 
 <body>
     <h1>掲示板画面</h1>
+    <div class="user-info">
+        <p>ユーザーID: <?php echo htmlspecialchars($user_id, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p>ユーザー名: <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p>学科ID: <?php echo htmlspecialchars($department_id, ENT_QUOTES, 'UTF-8'); ?></p>
+    </div>
     <div class="button-container">
         <a class="button" href="dept_board.php?dept=all">全体掲示板</a><br>
-        <a class="button" href="_board.php?dept=ut">宇宙・半導体工学科</a><br>
+        <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
         <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
         <a class="button" href="dept_board.php?dept=den">電気電子工学科</a><br>
         <a class="button" href="dept_board.php?dept=jo">情報通信システム工学科</a><br>
