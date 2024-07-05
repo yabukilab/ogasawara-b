@@ -1,11 +1,6 @@
-
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="ja">
-=======
 <html>
 
->>>>>>> acb3ce791ec5462e75b617553872ea79f46c54d0
 <head>
     <meta charset="UTF-8">
     <title>ログイン</title>
