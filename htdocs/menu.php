@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'db2.php';
-}
 ?>
 
 <!DOCTYPE html>
