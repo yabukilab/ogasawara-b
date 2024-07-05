@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($username && $password && $faculty && $department) {
         // 同一ユーザ名の確認
-        $sql = 'SELECT COUNT(*) FROM users WHERE username = :username';
+        $sql = 'SELECT COUNT(*) FROM users WHERE name = :username';
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // 新規ユーザ登録
-            $sql = 'INSERT INTO users (username, password, department_id) VALUES (:username, :password, :department)';
+            $sql = 'INSERT INTO users (name, password, department_id) VALUES (:username, :password, :department)';
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
