@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-07-05 10:53:45
+-- 生成日時: 2024-07-05 11:43:34
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `posts` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
   `department_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -64,6 +64,7 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_id_4` (`user_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `user_id_2` (`user_id`),
   ADD KEY `user_id_3` (`user_id`);
