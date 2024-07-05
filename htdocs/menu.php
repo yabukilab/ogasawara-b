@@ -1,5 +1,11 @@
 <?php
 require 'db2.php';
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +15,6 @@ require 'db2.php';
     <title>掲示板一覧</title>
     <link rel="stylesheet" href="st3.css">
 </head>
-
 <body>
     <h1>掲示板画面</h1>
     <div class="button-container">
