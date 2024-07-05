@@ -12,6 +12,7 @@ require 'db2.php';
 
 <body>
     <h1>掲示板画面</h1>
+    <a href="" class="btn_02">Button</a>
         <a class="button" href="all_board.php">全体掲示板</a><br>
         <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
         <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
