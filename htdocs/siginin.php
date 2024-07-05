@@ -142,12 +142,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // 新規ユーザ登録
-            $sql = 'INSERT INTO users (username, password, faculty, department) VALUES (:username, :password, :faculty, :department)';
+            $sql = 'INSERT INTO users (username, password, department_id) VALUES (:username, :password, :department)';
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
-            $stmt->bindParam(':faculty', $faculty, PDO::PARAM_STR);
-            $stmt->bindParam(':department', $department, PDO::PARAM_STR);
+            $stmt->bindParam(':department', $department, PDO::PARAM_INT);
             $stmt->execute();
 
             header("Location: login.php");
