@@ -118,6 +118,7 @@
 </html>
 
 <?php
+
 require 'db2.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -141,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // 新規ユーザ登録
-            $sql = 'INSERT INTO users (user_name, password, department_id) VALUES (:username, :password, :department)';
+            $sql = 'INSERT INTO users (username, password, department_id) VALUES (:username, :password, :department)';
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
