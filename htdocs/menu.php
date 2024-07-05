@@ -12,7 +12,6 @@ require 'db2.php';
 
 <body>
     <h1>掲示板画面</h1>
-    <div class="button-container">
         <a class="button" href="all_board.php">全体掲示板</a><br>
         <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
         <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
@@ -33,6 +32,5 @@ require 'db2.php';
         <a class="button" href="dept_board.php?dept=keijou">経営情報科学科</a><br>
         <a class="button" href="dept_board.php?dept=pm">プロジェクトマネジメント学科</a><br>
         <a class="button" href="dept_board.php?dept=kinyuu">金融・経営リスク科学科</a><br>
-    </div>
 </body>
 </html>
