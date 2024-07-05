@@ -74,7 +74,7 @@ $department_id = $_SESSION['department_id'];
         <p>学科ID: <?php echo htmlspecialchars($department_id, ENT_QUOTES, 'UTF-8'); ?></p>
     </div>
     <div class="button-container">
-        <a class="button" href="dept_board.php?dept=all">全体掲示板</a><br>
+        <a class="button" href="dept_board.php?dept=zen">全体掲示板</a><br>
         <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
         <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
         <a class="button" href="dept_board.php?dept=den">電気電子工学科</a><br>
