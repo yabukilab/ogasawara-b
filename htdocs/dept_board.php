@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $dept = $_GET['dept'] ?? '';
 
 $allowed_departments = [
+    'zen' => 0,
     'ut' => 1,
     'sen' => 2,
     'den' => 3,

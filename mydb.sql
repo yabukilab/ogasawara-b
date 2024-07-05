@@ -53,11 +53,7 @@ CREATE TABLE `users` (
   `name` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
   `department_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_id_4` (`user_id`),
-  KEY `user_id` (`user_id`),
-  KEY `user_id_2` (`user_id`),
-  KEY `user_id_3` (`user_id`)
+  PRIMARY KEY (`user_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -80,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-05 20:38:34
+-- Dump completed on 2024-07-05 20:42:09
