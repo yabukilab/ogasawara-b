@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // タイトルと内容が空でないか確認
     if (!empty($title) && !empty($content)) {
         // 新規投稿をデータベースに挿入
-        $stmt = $db->prepare("INSERT INTO posts (title, content, user_id, department) VALUES (:title, :content, :user_id, :department)");
+        $stmt = $db->prepare("INSERT INTO posts (title, content, user_id) VALUES (:title, :content, :user_id)");
         $stmt->execute(['title' => $title, 'content' => $content, 'user_id' => $user_id, 'department' => $department]);
     }
 }
