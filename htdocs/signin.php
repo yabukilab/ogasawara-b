@@ -1,56 +1,15 @@
-<?php
-require 'db2.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $faculty = $_POST['faculty'] ?? '';
-    $department = $_POST['department'] ?? '';
-
-    if ($username && $password && $faculty && $department) {
-        // 同一ユーザ名の確認
-        $sql = 'SELECT COUNT(*) FROM users WHERE name = :username';
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-        $stmt->execute();
-        $count = $stmt->fetchColumn();
-
-        if ($count > 0) {
-            $error_message = "このユーザ名は既に使用されています。";
-        } else {
-            // パスワードのハッシュ化
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            // 新規ユーザ登録
-            $sql = 'INSERT INTO users (name, password, department_id) VALUES (:username, :password, :department)';
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-            $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
-            $stmt->bindParam(':department', $department, PDO::PARAM_INT);
-            $stmt->execute();
-
-            header("Location: login.php");
-            exit();
-        }
-    } else {
-        $error_message = "すべてのフィールドに入力してください。";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>新規登録</title>
     <link rel="stylesheet" href="st3.css">
 </head>
+
 <body>
     <h1>新規登録</h1>
     <form action="" method="POST">
-        <?php if (isset($error_message)): ?>
-            <div style="color: red;"><?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?></div>
-        <?php endif; ?>
         <!-- User registration fields -->
         <table>
             <tr>
@@ -101,45 +60,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             switch (selectedFaculty) {
                 case 'kougaku':
                     options = `
-                        <option value='1'>宇宙・半導体工学科</option>
-                        <option value='2'>先端材料工学科</option>
-                        <option value='3'>電気電子工学科</option>
-                        <option value='4'>情報通信システム工学科</option>
-                        <option value='5'>応用化学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='ut'>宇宙・半導体工学科</option>
+                        <option value='sen'>先端材料工学科</option>
+                        <option value='den'>電気電子工学科</option>
+                        <option value='jo'>情報通信システム工学科</option>
+                        <option value='ouyo'>応用化学科</option>`;
                     break;
                 case 'souzou':
                     options = `
-                        <option value='6'>建築学科</option>
-                        <option value='7'>都市環境工学科</option>
-                        <option value='8'>デザイン科学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='ken'>建築学科</option>
+                        <option value='tosi'>都市環境工学科</option>
+                        <option value='deza'>デザイン科学科</option>`;
                     break;
                 case 'senshin':
                     options = `
-                        <option value='9'>未来ロボティクス学科</option>
-                        <option value='10'>生命科学科</option>
-                        <option value='11'>知能メディア学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='mirobo'>未来ロボティクス学科</option>
+                        <option value='seimei'>生命科学科</option>
+                        <option value='tinome'>知能メディア学科</option>`;
                     break;
                 case 'jouhenkaku':
                     options = `
-                        <option value='12'>情報工学科</option>
-                        <option value='13'>認知情報科学科</option>
-                        <option value='14'>高度応用情報科学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='jouhou'>情報工学科</option>
+                        <option value='ninti'>認知情報科学科</option>
+                        <option value='koudo'>高度応用情報科学科</option>`;
                     break;
                 case 'mirai':
                     options = `
-                        <option value='15'>デジタル変革科学科</option>
-                        <option value='16'>経営デザイン科学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='dejihen'>デジタル変革科学科</option>
+                        <option value='keideza'>経営デザイン科学科</option>`;
                     break;
                 case 'jouhou':
                     options = `
-                        <option value='17'>情報工学科</option>
-                        <option value='18'>情報ネットワーク学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='jouhoukou'>情報工学科</option>
+                        <option value='net'>情報ネットワーク学科</option>`;
                     break;
                 case 'shakai':
                     options = `
-                        <option value='19'>経営情報科学科</option>
-                        <option value='20'>プロジェクトマネジメント学科</option>
-                        <option value='21'>金融・経営リスク科学科</option>`;
+                        <option value=''>学科を選択</option>
+                        <option value='keijou'>経営情報科学科</option>
+                        <option value='pm'>プロジェクトマネジメント学科</option>
+                        <option value='kinyuu'>金融・経営リスク科学科</option>`;
                     break;
                 default:
                     options = `<option value=''>学科を選択</option>`;
@@ -148,4 +114,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
     </script>
 </body>
+
 </html>
+
+<?php
+require 'db2.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $faculty = $_POST['faculty'] ?? '';
+    $department = $_POST['department'] ?? '';
+
+    if ($username && $password && $faculty && $department) {
+        // 同一ユーザ名の確認
+        $sql = 'SELECT COUNT(*) FROM users WHERE username = :username';
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        if ($count > 0) {
+            echo "<div style='color: red;'>このユーザ名は既に使用されています。</div>";
+        } else {
+            // パスワードのハッシュ化
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // 新規ユーザ登録
+            $sql = 'INSERT INTO users (user_name, password, department_id) VALUES (:username, :password, :department)';
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+            $stmt->bindParam(':department', $department, PDO::PARAM_INT);
+            $stmt->execute();
+
+            header("Location: login.php");
+            exit();
+        }
+    } else {
+        echo "<div style='color: red;'>すべてのフィールドに入力してください。</div>";
+    }
+}
+?>

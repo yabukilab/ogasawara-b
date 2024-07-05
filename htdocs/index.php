@@ -1,57 +1,67 @@
 <?php
-require 'db2.php';
-session_start();
+require 'db2.php'; // データベース接続を含むファイルをインクルード
+
+if (!isset($db)) {
+    die("Database connection not established.");
+}
+
+$err_msg = ''; // エラーメッセージ変数の初期化
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
+    $user = $_POST["username"] ?? '';
+    $pass = $_POST["password"] ?? '';
 
-    if ($username && $password) {
+    if ($user && $pass) {
         $sql = 'SELECT * FROM users WHERE name = :username';
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $prepare = $db->prepare($sql);
+        $prepare->bindParam(':username', $user, PDO::PARAM_STR);
+        $prepare->execute();
+        $result = $prepare->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['username'] = $user['name'];
-            $_SESSION['department_id'] = $user['department_id'];
-            header("Location: menu.php");
-            exit();
+        if ($result) {
+            $db_pass = $result['password'];
+            if (password_verify($pass, $db_pass)) {
+                session_start();
+                $_SESSION['user_id'] = $result['user_id'];
+                $_SESSION['username'] = $user;
+                header("Location: menu.php");
+                exit();
+            } else {
+                $err_msg = "ユーザ名またはパスワードが間違っています。";
+            }
         } else {
-            $error_message = "ユーザ名またはパスワードが間違っています。";
+            $err_msg = "ユーザ名またはパスワードが間違っています。";
         }
     } else {
-        $error_message = "すべてのフィールドに入力してください。";
+        $err_msg = "ユーザ名とパスワードを入力してください。";
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>ログイン</title>
-    <link rel="stylesheet" href="st3.css">
+    <link rel="stylesheet" href="st.css">
 </head>
+
 <body>
     <h1>ログイン</h1>
-    <form method="POST" action="">
-        <?php if (isset($error_message)): ?>
-            <div style="color: red;"><?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?></div>
+    <form action="" method="POST">
+        <?php if (isset($err_msg) && $err_msg !== ""): ?>
+            <div style="color: red;"><?php echo htmlspecialchars($err_msg, ENT_QUOTES, 'UTF-8'); ?></div><br>
         <?php endif; ?>
-        <div>
-            <label for="username">ユーザ名</label>
-            <input type="text" name="username" id="username" required>
+        <div class="name">
+            ユーザ名<input type="text" name="username" value=""><br>
         </div>
-        <div>
-            <label for="password">パスワード</label>
-            <input type="password" name="password" id="password" required>
+        <div class="password">
+            パスワード<input type="password" name="password" value=""><br>
         </div>
-        <div>
-            <input type="submit" value="ログイン">
-        </div>
+        <input type="submit" name="Login" class="button" value="ログイン">
     </form>
+    <a href="signin.php">新規登録</a>
 </body>
+
 </html>
