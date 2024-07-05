@@ -35,13 +35,13 @@ if (!isset($db)) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = $_POST["username"] ?? '';
+    $user = $_POST["user_name"] ?? '';
     $pass = $_POST["password"] ?? '';
 
     if ($user && $pass) {
-        $sql = 'SELECT * FROM users WHERE username = :username';
+        $sql = 'SELECT * FROM users WHERE user_name = :user_name';
         $prepare = $db->prepare($sql);
-        $prepare->bindParam(':username', $user, PDO::PARAM_STR);
+        $prepare->bindParam(':user_name', $user, PDO::PARAM_STR);
         $prepare->execute();
         $result = $prepare->fetch(PDO::FETCH_ASSOC);
 
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($pass, $db_pass)) {
                 session_start();
                 $_SESSION['user_id'] = $result['id'];
-                $_SESSION['username'] = $user;
+                $_SESSION['user_name'] = $user;
                 header("Location: menu.php");
                 exit();
             } else {
