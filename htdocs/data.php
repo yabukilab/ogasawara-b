@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require 'db2.php';
 
 // Fetch all rows from the table
 function fetchAllRows($db)

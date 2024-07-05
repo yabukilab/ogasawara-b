@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'senshin':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='mirobo'>デザイン科学科</option>
+                        <option value='mirobo'>未来ロボティクス学科</option>
                         <option value='seimei'>生命科学科</option>
                         <option value='tinome'>知能メディア学科</option>`;
                     break;
