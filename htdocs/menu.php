@@ -7,47 +7,7 @@ require 'db2.php';
 <head>
     <meta charset="UTF-8">
     <title>掲示板一覧</title>
-    <style>
-        body {
-            background-color: #d7e7f6;
-        }
-
-        /* <h1>をセンターに配置 */
-        h1 {
-            color: red;
-            text-align: center;
-        }
-
-        /* ボタンの基本スタイル */
-        .button {
-            display: inline-flex;
-            padding: 10px 30px;
-            margin: 10px 5px;
-            width: 425px; /* 統一された幅 */
-            height: 50px; /* 統一された高さ */
-            font-size: 30px;
-            color: white;
-            background-color: #070707;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            justify-content: center; /* 中央揃え */
-            align-items: center; /* 中央揃え */
-        }
-
-        /* ボタンホバー時のスタイル */
-        .button:hover {
-            background-color: #bebebe;
-        }
-
-        /* ボタンをブロック要素として扱い、中央揃えにする */
-        .button-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="st3.css">
 </head>
 
 <body>
