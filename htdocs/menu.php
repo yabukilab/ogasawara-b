@@ -1,11 +1,5 @@
 <?php
 require 'db2.php';
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +7,54 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>掲示板一覧</title>
-    <link rel="stylesheet" href="st3.css">
+    <style>
+        body {
+            background-color: #d7e7f6;
+        }
+
+        /* <h1>をセンターに配置 */
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        /* ボタンの基本スタイル */
+        .button {
+            display: inline-flex;
+            padding: 10px 30px;
+            margin: 10px 5px;
+            width: 425px; /* 統一された幅 */
+            height: 50px; /* 統一された高さ */
+            font-size: 30px;
+            color: white;
+            background-color: #070707;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            justify-content: center; /* 中央揃え */
+            align-items: center; /* 中央揃え */
+        }
+
+        /* ボタンホバー時のスタイル */
+        .button:hover {
+            background-color: #bebebe;
+        }
+
+        /* ボタンをブロック要素として扱い、中央揃えにする */
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
     <h1>掲示板画面</h1>
     <div class="button-container">
         <a class="button" href="dept_board.php?dept=all">全体掲示板</a><br>
-        <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
+        <a class="button" href="_board.php?dept=ut">宇宙・半導体工学科</a><br>
         <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
         <a class="button" href="dept_board.php?dept=den">電気電子工学科</a><br>
         <a class="button" href="dept_board.php?dept=jo">情報通信システム工学科</a><br>
