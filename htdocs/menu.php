@@ -12,6 +12,12 @@ require 'db2.php';
             background-color: #d7e7f6;
         }
 
+        /* <h1>をセンターに配置 */
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
         /* ボタンの基本スタイル */
         .button {
             display: inline-flex;
@@ -40,11 +46,6 @@ require 'db2.php';
         .button-container {
             margin-top: 20px;
             text-align: center;
-        }
-
-        /* 確認のための追加スタイル */
-        h1 {
-            color: red;
         }
     </style>
 </head>
