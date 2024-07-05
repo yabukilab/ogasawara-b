@@ -118,7 +118,6 @@
 </html>
 
 <?php
-
 require 'db2.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
