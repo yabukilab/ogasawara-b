@@ -118,7 +118,7 @@
 </html>
 
 <?php
-session_start();
+
 require 'db2.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
