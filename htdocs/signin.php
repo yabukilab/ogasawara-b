@@ -61,51 +61,51 @@
                 case 'kougaku':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='ut'>宇宙・半導体工学科</option>
-                        <option value='sen'>先端材料工学科</option>
-                        <option value='den'>電気電子工学科</option>
-                        <option value='jo'>情報通信システム工学科</option>
-                        <option value='ouyo'>応用化学科</option>`;
+                        <option value='1'>宇宙・半導体工学科</option>
+                        <option value='2'>先端材料工学科</option>
+                        <option value='3'>電気電子工学科</option>
+                        <option value='4'>情報通信システム工学科</option>
+                        <option value='5'>応用化学科</option>`;
                     break;
                 case 'souzou':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='ken'>建築学科</option>
-                        <option value='tosi'>都市環境工学科</option>
-                        <option value='deza'>デザイン科学科</option>`;
+                        <option value='6'>建築学科</option>
+                        <option value='7'>都市環境工学科</option>
+                        <option value='8'>デザイン科学科</option>`;
                     break;
                 case 'senshin':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='mirobo'>未来ロボティクス学科</option>
-                        <option value='seimei'>生命科学科</option>
-                        <option value='tinome'>知能メディア学科</option>`;
+                        <option value='9'>未来ロボティクス学科</option>
+                        <option value='10'>生命科学科</option>
+                        <option value='11'>知能メディア学科</option>`;
                     break;
                 case 'jouhenkaku':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='jouhou'>情報工学科</option>
-                        <option value='ninti'>認知情報科学科</option>
-                        <option value='koudo'>高度応用情報科学科</option>`;
+                        <option value='12'>情報工学科</option>
+                        <option value='13'>認知情報科学科</option>
+                        <option value='14'>高度応用情報科学科</option>`;
                     break;
                 case 'mirai':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='dejihen'>デジタル変革科学科</option>
-                        <option value='keideza'>経営デザイン科学科</option>`;
+                        <option value='15'>デジタル変革科学科</option>
+                        <option value='16'>経営デザイン科学科</option>`;
                     break;
                 case 'jouhou':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='jouhoukou'>情報工学科</option>
-                        <option value='net'>情報ネットワーク学科</option>`;
+                        <option value='17'>情報工学科</option>
+                        <option value='18'>情報ネットワーク学科</option>`;
                     break;
                 case 'shakai':
                     options = `
                         <option value=''>学科を選択</option>
-                        <option value='keijou'>経営情報科学科</option>
-                        <option value='pm'>プロジェクトマネジメント学科</option>
-                        <option value='kinyuu'>金融・経営リスク科学科</option>`;
+                        <option value='19'>経営情報科学科</option>
+                        <option value='20'>プロジェクトマネジメント学科</option>
+                        <option value='21'>金融・経営リスク科学科</option>`;
                     break;
                 default:
                     options = `<option value=''>学科を選択</option>`;
@@ -157,3 +157,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
