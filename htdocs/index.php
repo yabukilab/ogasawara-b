@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>ログイン</title>
     <link rel="stylesheet" href="st.css">
-
 </head>
 
 <body>
@@ -34,14 +33,16 @@ if (!isset($db)) {
     die("Database connection not established.");
 }
 
+$err_msg = ''; // エラーメッセージ変数の初期化
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = $_POST["user_name"] ?? '';
+    $user = $_POST["username"] ?? '';
     $pass = $_POST["password"] ?? '';
 
     if ($user && $pass) {
-        $sql = 'SELECT * FROM users WHERE user_name = :user_name';
+        $sql = 'SELECT * FROM users WHERE username = :username';
         $prepare = $db->prepare($sql);
-        $prepare->bindParam(':user_name', $user, PDO::PARAM_STR);
+        $prepare->bindParam(':username', $user, PDO::PARAM_STR);
         $prepare->execute();
         $result = $prepare->fetch(PDO::FETCH_ASSOC);
 
@@ -49,8 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $db_pass = $result['password'];
             if (password_verify($pass, $db_pass)) {
                 session_start();
-                $_SESSION['user_id'] = $result['id'];
-                $_SESSION['user_name'] = $user;
+                $_SESSION['user_id'] = $result['user_id'];
+                $_SESSION['username'] = $user;
                 header("Location: menu.php");
                 exit();
             } else {
