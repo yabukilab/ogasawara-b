@@ -1,3 +1,43 @@
+<?php
+require 'db2.php'; // データベース接続を含むファイルをインクルード
+
+if (!isset($db)) {
+    die("Database connection not established.");
+}
+
+$err_msg = ''; // エラーメッセージ変数の初期化
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user = $_POST["username"] ?? '';
+    $pass = $_POST["password"] ?? '';
+
+    if ($user && $pass) {
+        $sql = 'SELECT * FROM users WHERE name = :username';
+        $prepare = $db->prepare($sql);
+        $prepare->bindParam(':username', $user, PDO::PARAM_STR);
+        $prepare->execute();
+        $result = $prepare->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            $db_pass = $result['password'];
+            if (password_verify($pass, $db_pass)) {
+                session_start();
+                $_SESSION['user_id'] = $result['user_id'];
+                $_SESSION['username'] = $user;
+                header("Location: menu.php");
+                exit();
+            } else {
+                $err_msg = "ユーザ名またはパスワードが間違っています。";
+            }
+        } else {
+            $err_msg = "ユーザ名またはパスワードが間違っています。";
+        }
+    } else {
+        $err_msg = "ユーザ名とパスワードを入力してください。";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,43 +65,3 @@
 </body>
 
 </html>
-
-<?php
-require 'db2.php'; // データベース接続を含むファイルをインクルード
-
-if (!isset($db)) {
-    die("Database connection not established.");
-}
-
-$err_msg = ''; // エラーメッセージ変数の初期化
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = $_POST["username"] ?? '';
-    $pass = $_POST["password"] ?? '';
-
-    if ($user && $pass) {
-        $sql = 'SELECT * FROM users WHERE username = :username';
-        $prepare = $db->prepare($sql);
-        $prepare->bindParam(':username', $user, PDO::PARAM_STR);
-        $prepare->execute();
-        $result = $prepare->fetch(PDO::FETCH_ASSOC);
-
-        if ($result) {
-            $db_pass = $result['password'];
-            if (password_verify($pass, $db_pass)) {
-                session_start();
-                $_SESSION['user_id'] = $result['user_id'];
-                $_SESSION['username'] = $user;
-                header("Location: menu.php");
-                exit();
-            } else {
-                $err_msg = "ユーザ名またはパスワードが間違っています。";
-            }
-        } else {
-            $err_msg = "ユーザ名またはパスワードが間違っています。";
-        }
-    } else {
-        $err_msg = "ユーザ名とパスワードを入力してください。";
-    }
-}
-?>
