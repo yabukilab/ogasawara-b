@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-07-06 09:42:17
+-- 生成日時: 2024-07-06 13:32:44
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -89,7 +89,10 @@ INSERT INTO `posts` (`id`, `user_id`, `content`, `created_at`, `department_id`) 
 (11, 18, 'こっちにも書き込んでみるね。みなさんよろしくお願いします。', '2024-07-06 07:35:18', 'zen'),
 (12, 19, '新しい学科ですね。頑張ります！よろしくお願いします。', '2024-07-06 07:36:23', 'ut'),
 (13, 19, '僕も今年入学しました。宇宙飛行士になりたいです。', '2024-07-06 07:36:52', 'zen'),
-(14, 19, 'ほぼ完成かな。なかなか難しいな。というか、データの引き継ぎが面倒。', '2024-07-06 07:37:36', 'ut');
+(14, 19, 'ほぼ完成かな。なかなか難しいな。というか、データの引き継ぎが面倒。', '2024-07-06 07:37:36', 'ut'),
+(15, 20, 'プロジェクトマネジメント学科に入学しました。よろしくお願いしますね！', '2024-07-06 11:10:01', 'pm'),
+(16, 20, 'こっちにも挨拶しておきますね。マリーゴールド、聞いてね。', '2024-07-06 11:10:26', 'zen'),
+(17, 21, '今日の雨はすごかった。暑かったし。しんどい。', '2024-07-06 11:12:05', 'net');
 
 -- --------------------------------------------------------
 
@@ -115,7 +118,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `faculty`, `department`, `cre
 (16, 'user2', '$2y$10$.1/6yx5XsUXUaWuLktsQqOSg2hWtmQas9LS3T3JTmumlNHAOxx2Mu', 'shakai', 'keijou', '2024-07-05 16:27:17'),
 (17, 'user3', '$2y$10$dT81zb/OLFaKYvfbMObHr.ctNLeTnv7eTCJJf.E2jKZIMZGMecqvy', 'shakai', 'kinyuu', '2024-07-05 16:51:13'),
 (18, 'user4', '$2y$10$DeEneJ.ft//3TY7AA2YG2.L6SapiFJGsNWc6i4.3m2KNsIKr1b5BG', 'jouhou', 'net', '2024-07-05 18:05:51'),
-(19, '小笠原秀人', '$2y$10$YA896lnJaqnR0vlxxmx0weYEPrIpF80CiLrynj7yE9dGM0UUPvv0m', 'kougaku', 'ut', '2024-07-06 07:35:53');
+(19, '小笠原秀人', '$2y$10$YA896lnJaqnR0vlxxmx0weYEPrIpF80CiLrynj7yE9dGM0UUPvv0m', 'kougaku', 'ut', '2024-07-06 07:35:53'),
+(20, 'あいみょん', '$2y$10$k9Dyr.7o/WKiMAS3v4GfOuLL8Kdsbk5BMUNs5/McOtI3ungEQIwPS', 'shakai', 'pm', '2024-07-06 09:53:08'),
+(21, 'おれ', '$2y$10$dwcEPZzvlCoC9.TjN58wU.ckYg3if/HiDYfv2jm.vjnUR1LV2FGuC', 'jouhou', 'net', '2024-07-06 11:11:28');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -142,13 +147,13 @@ ALTER TABLE `users`
 -- テーブルの AUTO_INCREMENT `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- テーブルの AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
