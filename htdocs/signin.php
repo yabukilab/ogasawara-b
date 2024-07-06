@@ -9,7 +9,7 @@
 
 <body>
     <h1>新規登録</h1>
-    <form action="" method="POST">
+    <form action="submit.php" method="POST">
         <!-- User registration fields -->
         <table>
             <tr>
@@ -116,6 +116,8 @@
 </body>
 
 </html>
+<<<<<<< HEAD
+=======
 
 <?php
 require 'db2.php';
@@ -156,3 +158,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+>>>>>>> 303895bfbe29f6693cba112007e7a403bd33a736
