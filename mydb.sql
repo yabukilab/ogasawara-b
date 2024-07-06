@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- テーブルの構造 `department`
 --
+drop table if exists department;
 
 CREATE TABLE `department` (
   `ryakugo` varchar(10) DEFAULT NULL,
@@ -62,6 +63,7 @@ INSERT INTO `department` (`ryakugo`, `gakka`) VALUES
 --
 -- テーブルの構造 `posts`
 --
+drop table if exists posts;
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
@@ -99,6 +101,7 @@ INSERT INTO `posts` (`id`, `user_id`, `content`, `created_at`, `department_id`) 
 --
 -- テーブルの構造 `users`
 --
+drop table if exists users;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
