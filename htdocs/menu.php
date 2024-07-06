@@ -54,32 +54,40 @@
 
 <body>
 
-    <?php
-    session_start();
-    if (!isset($_SESSION['user_id'])) {
-        header("Location: index.php");
-        exit();
-    }
-    $userid = $_SESSION['user_id'];
-    $username = $_SESSION['user_name'];
-    $department_id = $_SESSION['department_name'];
-    
-    $_SESSION['user_id'] = $userid;
-    $_SESSION['user_name'] = $username;
-    $_SESSION['department_name'] = $department_id;
-    
-    ?>
-
     <h1>掲示板画面</h1>
 
+    <?php
+        session_start();
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: index.php");
+            exit();
+        }
+        $userid = $_SESSION['user_id'];
+        $username = $_SESSION['user_name'];
+        $department_id = $_SESSION['department_name'];
+    
+        $_SESSION['user_id'] = $userid;
+        $_SESSION['user_name'] = $username;
+        $_SESSION['department_name'] = $department_id;
+    
+        require 'db.php';
+        // 学科名の取得
+        $sql = 'SELECT gakka FROM department where ryakugo ='.'"'.$department_id.'"'; # SQL文
+        $prepare = $db->prepare($sql);                                              # 準備
+        $prepare->execute();                                                        # 実行
+        $result = $prepare->fetch(PDO::FETCH_ASSOC);                               # 結果の取得
+        $gakka = h($result['gakka']);
+    ?>
+
     <div class="user-info">
-        <p>ユーザーID: <?php echo htmlspecialchars($userid, ENT_QUOTES, 'UTF-8'); ?></p>
-        <p>ユーザー名: <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?></p>
-        <p>学科ID: <?php echo htmlspecialchars($department_id, ENT_QUOTES, 'UTF-8'); ?></p>
+        <!--<p>ユーザーID: <?php echo htmlspecialchars($userid, ENT_QUOTES, 'UTF-8'); ?></p>-->
+        <p>ユーザ名: <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p>学科名: <?php echo htmlspecialchars($gakka, ENT_QUOTES, 'UTF-8'); ?></p>
     </div>
 
     <div class="button-container">
-        <a class="button" href="dept_board.php?dept=all">全体掲示板</a><br>
+        <a href="./index.php">トップ画面に戻る</a><br>
+        <a class="button" href="dept_board.php?dept=zen">全体掲示板</a><br>
         <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
         <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
         <a class="button" href="dept_board.php?dept=den">電気電子工学科</a><br>
