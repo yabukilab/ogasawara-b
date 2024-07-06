@@ -121,16 +121,16 @@
 require 'db2.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'] ?? '';
+    $username = $_POST['name'] ?? '';
     $password = $_POST['password'] ?? '';
     $faculty = $_POST['faculty'] ?? '';
     $department = $_POST['department'] ?? '';
 
     if ($username && $password && $faculty && $department) {
         // 同一ユーザ名の確認
-        $sql = 'SELECT COUNT(*) FROM users WHERE username = :username';
+        $sql = 'SELECT COUNT(*) FROM users WHERE name = :name';
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':name', $username, PDO::PARAM_STR);
         $stmt->execute();
         $count = $stmt->fetchColumn();
 
@@ -141,9 +141,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // 新規ユーザ登録
-            $sql = 'INSERT INTO users (username, password, department_id) VALUES (:username, :password, :department)';
+            $sql = 'INSERT INTO users (name, password, department_id) VALUES (:name, :password, :department)';
             $stmt = $db->prepare($sql);
-            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->bindParam(':name', $username, PDO::PARAM_STR);
             $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
             $stmt->bindParam(':department', $department, PDO::PARAM_INT);
             $stmt->execute();
