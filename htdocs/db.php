@@ -14,7 +14,7 @@ function h($var)
 }
 
 # データベース接続に必要な情報を設定
-$dbServer = '127.0.0.1'; # データベースサーバのホスト名
+$dbServer = isset($_ENV['MYSQL_SERVER']) ? $_ENV['MYSQL_SERVER'] : '127.0.0.1';
 $dbUser = isset($_SERVER['MYSQL_USER']) ? $_SERVER['MYSQL_USER'] : 'root'; # データベースユーザ名
 $dbPass = isset($_SERVER['MYSQL_PASSWORD']) ? $_SERVER['MYSQL_PASSWORD'] : '';    # データベースパスワード
 $dbName = isset($_SERVER['MYSQL_DB']) ? $_SERVER['MYSQL_DB'] : 'mydb'; # データベース名
@@ -34,6 +34,3 @@ try {
   echo "Can't connect to the database: " . h($e->getMessage());
   exit;
 }
-
-
-
