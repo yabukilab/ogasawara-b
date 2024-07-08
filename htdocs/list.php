@@ -10,7 +10,10 @@ if (isset($_GET['dept'])) {
     if (isset($department_name) && $department_name === $dept) {
         header("Location: dept_board.php?dept=" . urlencode($dept));
         exit();
-    }else {
+    }else if(isset($department_name) && $department_name === 'zen') {
+        header("Location: dept_board.php?dept=" . urlencode($dept));
+        exit();
+    }else{
         header("Location:menu.php?error=mati
         ");
     }
