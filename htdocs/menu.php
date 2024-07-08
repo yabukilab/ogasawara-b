@@ -84,29 +84,31 @@
         <p>ユーザ名: <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?></p>
         <p>学科名: <?php echo htmlspecialchars($gakka, ENT_QUOTES, 'UTF-8'); ?></p>
     </div>
-
+<?php
+if(isset($_GET['error'])&&$_GET['error']=='mati'):?>
+<div style="color : red; text-align:center; font-weight:bold;">学科が間違っています</div>
+<?php endif;?>
     <div class="button-container">
-        <a href="./index.php">トップ画面に戻る</a><br>
-        <a class="button" href="dept_board.php?dept=zen">全体掲示板</a><br>
-        <a class="button" href="dept_board.php?dept=ut">宇宙・半導体工学科</a><br>
-        <a class="button" href="dept_board.php?dept=sen">先端材料工学科</a><br>
-        <a class="button" href="dept_board.php?dept=den">電気電子工学科</a><br>
-        <a class="button" href="dept_board.php?dept=jo">情報通信システム工学科</a><br>
-        <a class="button" href="dept_board.php?dept=ouyo">応用化学科</a><br>
-        <a class="button" href="dept_board.php?dept=ken">建築学科</a><br>
-        <a class="button" href="dept_board.php?dept=tosi">都市環境工学科</a><br>
-        <a class="button" href="dept_board.php?dept=deza">デザイン科学科</a><br>
-        <a class="button" href="dept_board.php?dept=seimei">生命科学科</a><br>
-        <a class="button" href="dept_board.php?dept=tinome">知能メディア学科</a><br>
-        <a class="button" href="dept_board.php?dept=jouhou">情報工学科</a><br>
-        <a class="button" href="dept_board.php?dept=ninti">認知情報科学科</a><br>
-        <a class="button" href="dept_board.php?dept=koudo">高度応用情報科学科</a><br>
-        <a class="button" href="dept_board.php?dept=dejihen">デジタル変革科学科</a><br>
-        <a class="button" href="dept_board.php?dept=keideza">経営デザイン科学科</a><br>
-        <a class="button" href="dept_board.php?dept=net">情報ネットワーク学科</a><br>
-        <a class="button" href="dept_board.php?dept=keijou">経営情報科学科</a><br>
-        <a class="button" href="dept_board.php?dept=pm">プロジェクトマネジメント学科</a><br>
-        <a class="button" href="dept_board.php?dept=kinyuu">金融・経営リスク科学科</a><br>
+        <a class="button" href="list.php?dept=zen">全体掲示板</a><br>
+        <a class="button" href="list.php?dept=ut">宇宙・半導体工学科</a><br>
+        <a class="button" href="list.php?dept=sen">先端材料工学科</a><br>
+        <a class="button" href="list.php?dept=den">電気電子工学科</a><br>
+        <a class="button" href="list.php?dept=jo">情報通信システム工学科</a><br>
+        <a class="button" href="list.php?dept=ouyo">応用化学科</a><br>
+        <a class="button" href="list.php?dept=ken">建築学科</a><br>
+        <a class="button" href="list.php?dept=tosi">都市環境工学科</a><br>
+        <a class="button" href="list.php?dept=deza">デザイン科学科</a><br>
+        <a class="button" href="list.php?dept=seimei">生命科学科</a><br>
+        <a class="button" href="list.php?dept=tinome">知能メディア学科</a><br>
+        <a class="button" href="list.php?dept=jouhou">情報工学科</a><br>
+        <a class="button" href="list.php?dept=ninti">認知情報科学科</a><br>
+        <a class="button" href="list.php?dept=koudo">高度応用情報科学科</a><br>
+        <a class="button" href="list.php?dept=dejihen">デジタル変革科学科</a><br>
+        <a class="button" href="list.php?dept=keideza">経営デザイン科学科</a><br>
+        <a class="button" href="list.php?dept=net">情報ネットワーク学科</a><br>
+        <a class="button" href="list.php?dept=keijou">経営情報科学科</a><br>
+        <a class="button" href="list.php?dept=pm">プロジェクトマネジメント学科</a><br>
+        <a class="button" href="list.php?dept=kinyuu">金融・経営リスク科学科</a><br>
     </div>
 </body>
 </html>
