@@ -10,10 +10,7 @@ $err_msg = ''; // エラーメッセージ変数の初期化
 $user = $_POST["username"];
 $pass = $_POST["password"];
 
-if ($user == '' || $pass == '') {
-    $err_msg = "ユーザ名とパスワードの両方を入力してください。";
-    header("Location: ./index.php");
-}
+
 
 if ($user && $pass) {
     $sql = 'SELECT * FROM users WHERE username ='.'"'.$user.'"';
@@ -32,11 +29,11 @@ if ($user && $pass) {
             exit();
         } else {
             $err_msg = "ユーザ名またはパスワードが間違っています。";
-            header("Location: ./index.php");
+            header("Location: ./index.php ?error=blank");
         }
     } else {
         $err_msg = "ユーザ名が間違ってます。";
-        header("Location: ./index.php");
+        header("Location: ./index.php ?error=brank");
     }
 }
 ?>

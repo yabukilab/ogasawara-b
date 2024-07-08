@@ -10,14 +10,19 @@
 <body>
     <h1>ログイン</h1>
     <form action="check.php" method="POST">
-        <?php if (isset($err_msg) && $err_msg !== ""): ?>
-            <div style="color: red;"><?php echo htmlspecialchars($err_msg, ENT_QUOTES, 'UTF-8'); ?></div><br>
-        <?php endif; ?>
+        <?php
+        if(isset ($_GET['error']) && $_GET['error']== 'blank'):?>
+        <div style="color : red; font-weight:bold;">ユーザ名またはパスワードが間違っています</div>
+        <?php endif;?>
+        <?php
+        if(isset ($_GET['error']) && $_GET['error']== 'brank'):?>
+        <div style="color : red; font-weight:bold;">ユーザ名が間違っています</div>
+        <?php endif;?>
         <div class="name">
-            ユーザ名<input type="text" name="username"><br>
+            ユーザ名<input type="text" name="username" required><br>
         </div>
         <div class="password">
-            パスワード<input type="password" name="password"><br>
+            パスワード<input type="password" name="password" required><br>
         </div>
         <input type="submit" name="Login" class="button" value="ログイン">
     </form>
