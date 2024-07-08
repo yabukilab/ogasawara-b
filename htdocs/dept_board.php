@@ -25,9 +25,6 @@ $_SESSION['selected'] = $selected;
 
 // 登録されているchatをDBから読み込み表示する
 require 'db.php';                               # 接続
-<<<<<<< HEAD
-
-=======
 ?>
 
 <!-- メッセージの登録処理 -->
@@ -38,7 +35,6 @@ require 'db.php';                               # 接続
     <a href="./menu.php">掲示板画面に戻る</a>
 </form>
 <?php
->>>>>>> 81fa620766b72008ac505668f6d7b378b3a02dbe
 if ($selected == "zen") {
     // 全体掲示板に登録されているメッセージを表示
     $sql = 'SELECT * FROM posts where department_id = "zen"'; # SQL文
