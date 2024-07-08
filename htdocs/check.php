@@ -25,15 +25,15 @@ if ($user && $pass) {
             $_SESSION['user_id'] = $result['id'];
             $_SESSION['user_name'] = $result['username'];
             $_SESSION['department_name'] = $result['department'];
-            header("Location: ./menu.php");
+            header("Location:menu.php");
             exit();
         } else {
             $err_msg = "ユーザ名またはパスワードが間違っています。";
-            header("Location: ./index.php ?error=blank");
+            header("Location:index.php?error=blank");
         }
     } else {
         $err_msg = "ユーザ名が間違ってます。";
-        header("Location: ./index.php ?error=brank");
+        header("Location:index.php?error=brank");
     }
 }
 ?>
