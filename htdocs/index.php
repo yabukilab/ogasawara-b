@@ -11,11 +11,11 @@
     <h1>ログイン</h1>
     <form action="check.php" method="POST">
         <?php
-        if(isset ($_GET['error']) && $_GET['error']== 'blank'):?>
+        if(isset($_GET['error']) && $_GET['error']== 'blank'):?>
         <div style="color : red; font-weight:bold;">ユーザ名またはパスワードが間違っています</div>
         <?php endif;?>
         <?php
-        if(isset ($_GET['error']) && $_GET['error']== 'brank'):?>
+        if(isset($_GET['error']) && $_GET['error']== 'brank'):?>
         <div style="color : red; font-weight:bold;">ユーザ名が間違っています</div>
         <?php endif;?>
         <div class="name">
