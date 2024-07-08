@@ -29,11 +29,12 @@ require 'db.php';                               # 接続
 
 <!-- メッセージの登録処理 -->
 <form method="POST" action="savechat.php">
-    <textarea name="chat" rows="6" cols="60"></textarea></br>
+    <textarea name="chat" rows="6" cols="60" placeholder="自由に書き込んでください"></textarea><br>
     <input type="submit" valut="登録" />
     <input type="reset" value="取り消し" />
     <a href="./menu.php">掲示板画面に戻る</a>
 </form>
+
 <?php
 if ($selected == "zen") {
     // 全体掲示板に登録されているメッセージを表示
@@ -110,12 +111,5 @@ if ($selected == "zen") {
 }
 ?>
 
-<!-- メッセージの登録処理 -->
-<form method="POST" action="savechat.php">
-    <textarea name="chat" rows="6" cols="60" placeholder="自由に書き込んでください"></textarea><br>
-    <input type="submit" valut="登録" />
-    <input type="reset" value="取り消し" />
-    <a href="./menu.php">掲示板画面に戻る</a>
-</form>
 
 </html>
