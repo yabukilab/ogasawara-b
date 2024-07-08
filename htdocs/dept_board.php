@@ -25,6 +25,9 @@ $_SESSION['selected'] = $selected;
 
 // 登録されているchatをDBから読み込み表示する
 require 'db.php';                               # 接続
+<<<<<<< HEAD
+
+=======
 ?>
 
 <!-- メッセージの登録処理 -->
@@ -35,6 +38,7 @@ require 'db.php';                               # 接続
     <a href="./menu.php">掲示板画面に戻る</a>
 </form>
 <?php
+>>>>>>> 81fa620766b72008ac505668f6d7b378b3a02dbe
 if ($selected == "zen") {
     // 全体掲示板に登録されているメッセージを表示
     $sql = 'SELECT * FROM posts where department_id = "zen"'; # SQL文
@@ -110,5 +114,15 @@ if ($selected == "zen") {
 }
 ?>
 
+<<<<<<< HEAD
+<!-- メッセージの登録処理 -->
+<form method="POST" action="savechat.php">
+    <textarea name="chat" rows="6" cols="60" placeholder="自由に書き込んでください"></textarea><br>
+    <input type="submit" valut="登録" />
+    <input type="reset" value="取り消し" />
+    <a href="./menu.php">掲示板画面に戻る</a>
+</form>
+=======
+>>>>>>> 81fa620766b72008ac505668f6d7b378b3a02dbe
 
 </html>
