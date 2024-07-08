@@ -30,29 +30,33 @@ require 'db.php';                               # 接続
 <!-- メッセージの登録処理 -->
 <form method="POST" action="savechat.php">
     <textarea name="chat" rows="6" cols="60" placeholder="自由に書き込んでください"></textarea><br>
-    <input type="submit" valut="登録" />
+    <input type="submit" value="登録" />
     <input type="reset" value="取り消し" />
     <a href="./menu.php">掲示板画面に戻る</a>
 </form>
 
 <?php
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+}
+
 if ($selected == "zen") {
     // 全体掲示板に登録されているメッセージを表示
-    $sql = 'SELECT * FROM posts where department_id = "zen"'; # SQL文
+    $sql = 'SELECT * FROM posts WHERE department_id = "zen" ORDER BY created_at DESC'; # SQL文
     $prepare = $db->prepare($sql);                            # 準備
     $prepare->execute();                                      # 実行
     $result = $prepare->fetchAll(PDO::FETCH_ASSOC);           # 結果の取得
     foreach ($result as $row) {
         $id = h($row['user_id']);
         // ユーザ名の取得
-        $sql = 'SELECT username FROM users where id = ' . $id; # SQL文
+        $sql = 'SELECT username FROM users WHERE id = ' . $id; # SQL文
         $prepare = $db->prepare($sql);                        # 準備
         $prepare->execute();                                  # 実行
         $result2 = $prepare->fetch(PDO::FETCH_ASSOC);         # 結果の取得
         $name = h($result2['username']);
 
         // 学科名の取得
-        $sql = 'SELECT gakka FROM department where ryakugo =' . '"' . $department . '"'; # SQL文
+        $sql = 'SELECT gakka FROM department WHERE ryakugo =' . '"' . $department . '"'; # SQL文
         $prepare = $db->prepare($sql);                                              # 準備
         $prepare->execute();                                                        # 実行
         $result3 = $prepare->fetch(PDO::FETCH_ASSOC);                               # 結果の取得
@@ -73,21 +77,21 @@ if ($selected == "zen") {
         // 学科が一致した場合
 
         // 学科名の取得
-        $sql = 'SELECT gakka FROM department where ryakugo =' . '"' . $department . '"'; # SQL文
+        $sql = 'SELECT gakka FROM department WHERE ryakugo =' . '"' . $department . '"'; # SQL文
         $prepare = $db->prepare($sql);                                              # 準備
         $prepare->execute();                                                        # 実行
         $result3 = $prepare->fetch(PDO::FETCH_ASSOC);                               # 結果の取得
         $gakka = h($result3['gakka']);
 
         // チャットコメントの表示
-        $sql = 'SELECT * FROM posts where department_id =' . '"' . $department . '"'; # SQL文
+        $sql = 'SELECT * FROM posts WHERE department_id =' . '"' . $department . '" ORDER BY created_at DESC'; # SQL文
         $prepare = $db->prepare($sql);                                          # 準備
         $prepare->execute();                                                    # 実行
         $result = $prepare->fetchAll(PDO::FETCH_ASSOC);                         # 結果の取得
         foreach ($result as $row) {
             $id = h($row['user_id']);
             // ユーザ名の取得
-            $sql = 'SELECT username FROM users where id = ' . $id; # SQL文
+            $sql = 'SELECT username FROM users WHERE id = ' . $id; # SQL文
             $prepare = $db->prepare($sql);                        # 準備
             $prepare->execute();                                  # 実行
             $result2 = $prepare->fetch(PDO::FETCH_ASSOC);         # 結果の取得
@@ -110,6 +114,5 @@ if ($selected == "zen") {
     }
 }
 ?>
-
 
 </html>
