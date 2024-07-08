@@ -110,7 +110,6 @@ if ($selected == "zen") {
 }
 ?>
 
-<<<<<<< HEAD
 <!-- メッセージの登録処理 -->
 <form method="POST" action="savechat.php">
     <textarea name="chat" rows="6" cols="60" placeholder="自由に書き込んでください"></textarea><br>
@@ -118,7 +117,5 @@ if ($selected == "zen") {
     <input type="reset" value="取り消し" />
     <a href="./menu.php">掲示板画面に戻る</a>
 </form>
-=======
->>>>>>> 81fa620766b72008ac505668f6d7b378b3a02dbe
 
 </html>
