@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>ログイン</title>
     <link rel="stylesheet" href="st.css">
 </head>
-
 <body>
     <h1>ログイン</h1>
     <form action="check.php" method="POST">
@@ -32,5 +30,4 @@
         <a href="signin.php">新規登録</a>
     </div>
 </body>
-
 </html>
