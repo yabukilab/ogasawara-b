@@ -1,6 +1,5 @@
 body {
   color: #212222;
-  font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -124,5 +123,9 @@ a.btn-border:active:before {
 
 .password input {
   margin-left: 10px;
+}
+.sinkibotan{
+  width: 15em;
+  height: 7em;
 }
 
