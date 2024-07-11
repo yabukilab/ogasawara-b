@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>新規登録</title>
-    <link rel="stylesheet" href="st3.css">
+    <link rel="stylesheet" href="st5.css">
 </head>
 
 <body>
