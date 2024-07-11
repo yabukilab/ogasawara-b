@@ -18,10 +18,10 @@
         if(isset($_GET['error']) && $_GET['error']== 'brank'):?>
         <div style="color : red; font-weight:bold;">ユーザ名が間違っています</div>
         <?php endif;?>
-        <div class="name">
+        <div class="name" style="font-size: 20px;">
             ユーザ名<input type="text" name="username" required><br>
         </div>
-        <div class="password">
+        <div class="password" style="font-size:20px;">
             パスワード<input type="password" name="password" required><br>
         </div>
         <input type="submit" name="Login" class="button" value="ログイン">

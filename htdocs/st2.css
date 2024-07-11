@@ -31,3 +31,7 @@ h1 {
     text-align: center;
     margin-top: 20px; /* 上部に少し余白を追加 */
 }
+
+label{
+    font-size: 20px;
+}

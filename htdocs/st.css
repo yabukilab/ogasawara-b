@@ -20,10 +20,6 @@ html {
   font-size: 62.5%;
 }
 
-div{
-  font-size: 50px;
-}
-
 .btn,
 a.btn,
 button.btn {
@@ -119,6 +115,7 @@ a.btn-border:active:before {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-size: 20px; /* ユーザ名とパスワードの文字サイズを20pxに変更 */
 }
 
 .name input {
@@ -128,3 +125,4 @@ a.btn-border:active:before {
 .password input {
   margin-left: 10px;
 }
+
