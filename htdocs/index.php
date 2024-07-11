@@ -29,7 +29,6 @@
         <a href="signin.php">新規登録</a>
         </div>        
     </form>
-    <a href="signin.php">新規登録</a>
 </body>
 
 </html>
