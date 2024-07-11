@@ -1,21 +1,27 @@
 <?php
 session_start();
 
-if (isset($_SESSION['department_name'])) {
-    $department_name = $_SESSION['department_name'];
+require 'db.php';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
 }
+
+$userid = $_SESSION['user_id'];
+$username = $_SESSION['user_name'];
+$department_id = $_SESSION['department_name'];
 
 if (isset($_GET['dept'])) {
     $dept = $_GET['dept'];
-    if (isset($department_name) && $department_name === $dept) {
+    if ($dept === 'zen' || $dept === $department_id) {
         header("Location: dept_board.php?dept=" . urlencode($dept));
         exit();
-    }else if(isset($department_name) && $department_name === 'zen') {
-        header("Location: dept_board.php?dept=" . urlencode($dept));
+    } else {
+        header("Location: menu.php?error=mati");
         exit();
-    }else{
-        header("Location:menu.php?error=mati
-        ");
     }
+} else {
+    header("Location: menu.php");
+    exit();
 }
-?>
