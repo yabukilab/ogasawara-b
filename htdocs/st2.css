@@ -1,7 +1,8 @@
 body {
     display: flex;
+    flex-direction: column; /* 縦方向のフレックスボックス */
     background-color: #d7e7f6;
-    justify-content: center;
+    justify-content: flex-start; /* 上部に配置 */
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -28,4 +29,5 @@ input[type="submit"] {
 
 h1 {
     text-align: center;
+    margin-top: 20px; /* 上部に少し余白を追加 */
 }

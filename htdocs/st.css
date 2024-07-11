@@ -20,6 +20,10 @@ html {
   font-size: 62.5%;
 }
 
+div{
+  font-size: 50px;
+}
+
 .btn,
 a.btn,
 button.btn {
