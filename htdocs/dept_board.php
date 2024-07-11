@@ -49,15 +49,21 @@ if ($selected == "zen") {
     $result = $prepare->fetchAll(PDO::FETCH_ASSOC);           # 結果の取得
     foreach ($result as $row) {
         $id = h($row['user_id']);
-        // ユーザ名の取得
+        // ユーザ名と学科名の取得
         $sql = 'SELECT username FROM users WHERE id = ' . $id; # SQL文
         $prepare = $db->prepare($sql);                        # 準備
         $prepare->execute();                                  # 実行
         $result2 = $prepare->fetch(PDO::FETCH_ASSOC);         # 結果の取得
         $name = h($result2['username']);
 
+        $sql = 'SELECT department FROM users WHERE id = ' . $id; # SQL文
+        $prepare = $db->prepare($sql);                        # 準備
+        $prepare->execute();                                  # 実行
+        $result2 = $prepare->fetch(PDO::FETCH_ASSOC);         # 結果の取得
+        $dept = h($result2['department']);
+
         // 学科名の取得
-        $sql = 'SELECT gakka FROM department WHERE ryakugo =' . '"' . $department . '"'; # SQL文
+        $sql = 'SELECT gakka FROM department WHERE ryakugo =' . '"' . $dept . '"'; # SQL文
         $prepare = $db->prepare($sql);                                              # 準備
         $prepare->execute();                                                        # 実行
         $result3 = $prepare->fetch(PDO::FETCH_ASSOC);                               # 結果の取得

@@ -1,24 +1,25 @@
-h1{
-  font-size: 30px;
-}
 body {
   color: #212222;
+  font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
   background-color: #d7e7f6;
 }
+
 *,
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
 }
+
 .btn,
 a.btn,
 button.btn {
@@ -42,6 +43,20 @@ button.btn {
   color: #212529;
   border-radius: 0.5rem;
 }
+
+.loginbutton {
+    background-color: #b7d7f6; /* Green */
+    border: none;
+    color: rgb(4, 4, 4);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 a.btn-border {
   margin-bottom: 12px;
   padding: 0;
@@ -49,6 +64,7 @@ a.btn-border {
   transition: all 0.3s;
   border-radius: 0;
 }
+
 a.btn-border span {
   position: relative;
   display: block;
@@ -58,6 +74,7 @@ a.btn-border span {
   border-radius: 0.5rem;
   background: #fff;
 }
+
 a.btn-border:before {
   position: absolute;
   bottom: -8px;
@@ -85,20 +102,25 @@ a.btn-border:before {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
 a.btn-border:hover {
   -webkit-transform: translate(0, 3px);
   transform: translate(0, 3px);
 }
+
 a.btn-border:hover:before {
   bottom: -5px;
 }
+
 a.btn-border:active {
   -webkit-transform: translate(0, 7px);
   transform: translate(0, 7px);
 }
+
 a.btn-border:active:before {
   bottom: -1px;
 }
+
 .name,
 .password {
   display: flex;
@@ -106,39 +128,16 @@ a.btn-border:active:before {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  font-size: 20px; /* ユーザ名とパスワードの文字サイズを20pxに変更 */
 }
+
 .name input {
   margin-left: 20px;
 }
+
 .password input {
   margin-left: 10px;
 }
-/* styles.css */
-.sinkibotan {
-  font-size: 24px; /* フォントサイズを大きくする */
-  padding: 20px 40px; /* パディングを追加してボタンを大きく見せる */
-  background-color: #d7e7f6; /* 背景色を追加 */
-  color: white; /* 文字色を白に変更 */
-  text-decoration: none; /* 下線を削除 */
-  border-radius: 5px; /* 角を丸くする */
-  display: inline-block; /* ブロック要素として表示 */
-  text-align: center; /* 文字を中央揃え */
-}
-.loginbutton .button {
-  font-size: 24px; /* フォントサイズを大きくする */
-  padding: 20px 40px; /* パディングを追加してボタンを大きく見せる */
-  background-color: #acd3f7; /* 背景色を追加 */
-  color: rgb(2, 2, 2); /* 文字色を白に変更 */
-  border: none; /* ボーダーを削除 */
-  border-radius: 5px; /* 角を丸くする */
-  cursor: pointer; /* マウスオーバー時のカーソルをポインターに変更 */
-  text-align: center; /* 文字を中央揃え */
-  display: inline-block; /* インラインブロック要素として表示 */
-}
 
-.sinkibotan:hover {
-.loginbutton .button:hover {
-  background-color:#d7e7f6; /* ホバー時の背景色を変更 */
-}
+div {
+  font-size: 20px;
 }
