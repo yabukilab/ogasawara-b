@@ -24,7 +24,9 @@
         <div class="password" style="font-size:20px;">
             パスワード<input type="password" name="password" required><br>
         </div>
-        <input type="submit" name="Login" class="button" value="ログイン">
+        <div class="loginbutton">
+            <input type="submit" name="Login" class="button" value="ログイン">
+        </div>
     </form>
     <div class="sinkibotan">
         <a href="signin.php">新規登録</a>
