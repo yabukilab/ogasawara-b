@@ -128,8 +128,20 @@ a.btn-border:active:before {
 .password input {
   margin-left: 10px;
 }
-.sinkibotan{
-  width: 30em;
-  height: 10em;
+/* styles.css */
+.sinkibotan {
+  font-size: 24px; /* フォントサイズを大きくする */
+  padding: 20px 40px; /* パディングを追加してボタンを大きく見せる */
+  background-color: #4CAF50; /* 背景色を追加 */
+  color: white; /* 文字色を白に変更 */
+  text-decoration: none; /* 下線を削除 */
+  border-radius: 5px; /* 角を丸くする */
+  display: inline-block; /* ブロック要素として表示 */
+  text-align: center; /* 文字を中央揃え */
 }
+
+.sinkibotan:hover {
+  background-color: #45a049; /* ホバー時の背景色を変更 */
+}
+
 
