@@ -114,31 +114,7 @@ a.btn-border:active:before {
 .password input {
   margin-left: 10px;
 }
-/* styles.css */
-.sinkibotan {
-  font-size: 24px; /* フォントサイズを大きくする */
-  padding: 20px 40px; /* パディングを追加してボタンを大きく見せる */
-  background-color: #d7e7f6; /* 背景色を追加 */
-  color: white; /* 文字色を白に変更 */
-  text-decoration: none; /* 下線を削除 */
-  border-radius: 5px; /* 角を丸くする */
-  display: inline-block; /* ブロック要素として表示 */
-  text-align: center; /* 文字を中央揃え */
-}
-.loginbutton .button {
-  font-size: 24px; /* フォントサイズを大きくする */
-  padding: 20px 40px; /* パディングを追加してボタンを大きく見せる */
-  background-color: #acd3f7; /* 背景色を追加 */
-  color: rgb(2, 2, 2); /* 文字色を白に変更 */
-  border: none; /* ボーダーを削除 */
-  border-radius: 5px; /* 角を丸くする */
-  cursor: pointer; /* マウスオーバー時のカーソルをポインターに変更 */
-  text-align: center; /* 文字を中央揃え */
-  display: inline-block; /* インラインブロック要素として表示 */
-}
 
-.sinkibotan:hover {
-.loginbutton .button:hover {
-  background-color:#d7e7f6; /* ホバー時の背景色を変更 */
-}
+input[type="submit"] {
+  padding: 10px 20px;
 }
