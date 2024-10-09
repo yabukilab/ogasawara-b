@@ -63,5 +63,54 @@ h1 {
 }
 
 body {
-    background-color: #fff5ea;
+    background-color: #86e5ff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Rounded M+ 1c', sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.map-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.map-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.map-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        padding: 10px;
+    }
 }
