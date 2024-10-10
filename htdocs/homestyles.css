@@ -116,28 +116,36 @@ body {
     }
 }
 
-/* **タブレット以上のスタイル（幅768px以上）** */
-@media (min-width: 768px) {
+/* タブレットスタイル */
+@media (min-width: 768px) and (max-width: 1024px) {
     h1 {
         font-size: 4em;
-        /* **タブレットでは少し小さく** */
+    }
+
+    .map-container {
+        padding: 15px;
+    }
+
+    .map-embed {
+        padding-bottom: 60%;
+        /* タブレット向けに少し高く */
     }
 }
 
-/* **スマホ版のスタイル（幅767px以下）** */
+/* スマホ版のスタイル */
 @media (max-width: 767px) {
     h1 {
         font-size: 2.5em;
-        /* **スマホではさらに小さく調整** */
+        /* スマホ向けにフォントサイズを小さく */
     }
 
     .map-container {
         padding: 10px;
-        /* **スマホでは余白を少なく** */
+        /* 地図周りの余白を減らす */
     }
 
     .map-embed {
         padding-bottom: 75%;
-        /* **スマホでは地図を縦長に調整（アスペクト比4:3）** */
+        /* スマホでは縦長の表示 */
     }
 }
