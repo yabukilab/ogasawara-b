@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
 h1 {
@@ -127,7 +128,7 @@ body {
     }
 
     .map-embed {
-        padding-bottom: 60%;
+        padding-bottom:  56.25%;;
         /* タブレット向けに少し高く */
     }
 }
@@ -135,7 +136,8 @@ body {
 /* スマホ版のスタイル */
 @media (max-width: 767px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 2em;
+        line-height: 1.2;
         /* スマホ向けにフォントサイズを小さく */
     }
 
