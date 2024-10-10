@@ -5,14 +5,14 @@
 }
 
 h1 {
-    font-size: 6em; 
+    font-size: 6em;
     margin-bottom: 20px;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .main-image img {
     width: 100%;
-    max-width: 800px; 
+    max-width: 800px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -93,7 +93,8 @@ body {
 
 .map-embed {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -112,5 +113,31 @@ body {
 @media (max-width: 768px) {
     .map-container {
         padding: 10px;
+    }
+}
+
+/* **タブレット以上のスタイル（幅768px以上）** */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4em;
+        /* **タブレットでは少し小さく** */
+    }
+}
+
+/* **スマホ版のスタイル（幅767px以下）** */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2.5em;
+        /* **スマホではさらに小さく調整** */
+    }
+
+    .map-container {
+        padding: 10px;
+        /* **スマホでは余白を少なく** */
+    }
+
+    .map-embed {
+        padding-bottom: 75%;
+        /* **スマホでは地図を縦長に調整（アスペクト比4:3）** */
     }
 }
