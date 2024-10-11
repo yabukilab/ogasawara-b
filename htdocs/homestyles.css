@@ -164,8 +164,8 @@ body {
     }
 
     h2{
-        font-size: 250%; 
-        margin-bottom: 5px;
+        font-size: 1.8em; 
+        margin-bottom: 8px;
     }
 
     .images {
@@ -183,19 +183,20 @@ body {
 
     .image p {
         margin-top: 10px;
-        /* 余白をさらに減らす */
+        /* 余白を減らす */
     }
 
     .map-container {
-        padding: 1%;
+        padding: 0.5%;
         /* 地図周りの余白を縮小 */
-        margin-top: 1%;
+        margin-top: 0.5%;
     }
 
     .map-embed {
-        padding-bottom: 1%;
-        /* スマホでは縦長の表示 */
-        height: auto;/* 高さの自動調整？ */
+        width: 100%; /* 横幅を画面サイズに調整 */
+        height: 250px; /* 高さを固定して縮小 */
+        max-width: 100%; /* 画面の幅に収める */
+        margin: 0 auto; /* 中央揃え */
     }
 
     .button {
