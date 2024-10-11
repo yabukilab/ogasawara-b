@@ -166,13 +166,13 @@ body {
     h2{
         font-size: 1.8em; 
         margin-bottom: 8px;
-        text-align: center;
+        text-align: left;
     }
 
     .images {
         flex-direction: column;
         /* 画像を縦並びに変更 */
-        align-items: left;
+        align-items: center;
     }
 
     .image {
@@ -194,9 +194,9 @@ body {
     }
 
     .map-embed {
-        width: 40%; /* 横幅を画面サイズに調整 */
+        width: 100%; /* 横幅を画面サイズに調整 */
         height: 250px; /* 高さを固定して縮小 */
-        max-width: 40%; /* 画面の幅に収める */
+        max-width: 100%; /* 画面の幅に収める */
         margin: 0 auto; /* 中央揃え */
     }
 
