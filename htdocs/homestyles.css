@@ -32,9 +32,10 @@ h1 {
 
 .image a {
     display: block;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     color: inherit;
+    white-space: normal;
 }
 
 .image img {
@@ -49,8 +50,10 @@ h1 {
 }
 
 .image p {
-    margin-top: 10px;
+    margin-top: 20px;
     font-weight: bold;
+    text-align: left;
+    white-space: normal;
 }
 
 .buttons {
@@ -95,7 +98,6 @@ body {
 .map-embed {
     position: relative;
     padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -111,43 +113,97 @@ body {
     border: none;
 }
 
-@media (max-width: 768px) {
-    .map-container {
-        padding: 10px;
-    }
-}
 
-/* タブレットスタイル */
-@media (min-width: 768px) and (max-width: 1024px) {
+
+/*仮実装（タブレットはOK）*/
+
+/* PC用のCSSはメディアクエリの外に記述する */
+
+@media screen and (max-width: 959px) {
+    /* 959px以下に適用されるCSS（タブレット用） */
+
+
     h1 {
-        font-size: 4em;
+        font-size: 3.5em;
+        /* タブレット用にフォントサイズを小さく */
+    }
+
+    .image {
+        width: 48%;
+        /* 画像を少し大きくして並びを調整 */
+    }
+
+    .image p {
+        margin-top: 15px;
+        /* タブレットで余白を少し減らす */
     }
 
     .map-container {
         padding: 15px;
+        /* 地図周りの余白を調整 */
     }
 
     .map-embed {
-        padding-bottom:  56.25%;;
-        /* タブレット向けに少し高く */
+        padding-bottom: 56.25%;
+        /* 地図の高さ比率を維持 */
     }
+
+    .button {
+        font-size: 0.9em;
+        /* ボタンのフォントサイズを少し小さく */
+    }
+
 }
 
-/* スマホ版のスタイル */
-@media (max-width: 767px) {
+@media screen and (max-width: 480px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+        /* スマホ用にフォントサイズを小さく */
         line-height: 1.2;
-        /* スマホ向けにフォントサイズを小さく */
+        /* 見出しの行間を狭く */
+    }
+
+    h2{
+        font-size: 1.8em; 
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    .images {
+        flex-direction: column;
+        /* 画像を縦並びに変更 */
+        align-items: center;
+    }
+
+    .image {
+        width: 100%;
+        /* スマホでは画像を1列に表示 */
+        margin-bottom: 15px;
+        /* 画像間のスペースを確保 */
+    }
+
+    .image p {
+        margin-top: 10px;
+        /* 余白を減らす */
     }
 
     .map-container {
-        padding: 10px;
-        /* 地図周りの余白を減らす */
+        padding: 0.5%;
+        /* 地図周りの余白を縮小 */
+        margin-top: 0.5%;
     }
 
     .map-embed {
-        padding-bottom: 75%;
-        /* スマホでは縦長の表示 */
+        width: 100%; /* 横幅を画面サイズに調整 */
+        height: 250px; /* 高さを固定して縮小 */
+        max-width: 100%; /* 画面の幅に収める */
+        margin: 0 auto; /* 中央揃え */
+    }
+
+    .button {
+        font-size: 0.8em;
+        /* ボタンのフォントサイズをさらに小さく */
+        padding: 8px 16px;
+        /* ボタンのパディングも縮小 */
     }
 }
