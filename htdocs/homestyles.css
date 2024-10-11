@@ -124,7 +124,7 @@ body {
 
 
     h1 {
-        font-size: 4em;
+        font-size: 3.5em;
         /* タブレット用にフォントサイズを小さく */
     }
 
@@ -157,14 +157,14 @@ body {
 
 @media screen and (max-width: 480px) {
     h1 {
-        font-size: 1.8em;
+        font-size: 1.5em;
         /* スマホ用にフォントサイズを小さく */
         line-height: 1.2;
         /* 見出しの行間を狭く */
     }
 
     h2{
-        font-size: 500%; 
+        font-size: 250%; 
         margin-bottom: 5px;
     }
 
@@ -187,13 +187,13 @@ body {
     }
 
     .map-container {
-        padding: 100%;
+        padding: 1%;
         /* 地図周りの余白を縮小 */
-        margin-top: 100%;
+        margin-top: 1%;
     }
 
     .map-embed {
-        padding-bottom: 100%;
+        padding-bottom: 1%;
         /* スマホでは縦長の表示 */
         height: auto;/* 高さの自動調整？ */
     }
