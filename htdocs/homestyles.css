@@ -98,7 +98,6 @@ body {
 .map-embed {
     position: relative;
     padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -116,7 +115,7 @@ body {
 
 
 
-/*仮実装*/
+/*仮実装（タブレットはOK）*/
 
 /* PC用のCSSはメディアクエリの外に記述する */
 
@@ -158,10 +157,15 @@ body {
 
 @media screen and (max-width: 480px) {
     h1 {
-        font-size: 2.5em;
-        /* スマホ用にフォントサイズをさらに小さく */
+        font-size: 2em;
+        /* スマホ用にフォントサイズを小さく */
         line-height: 1.2;
         /* 見出しの行間を狭く */
+    }
+
+    h2{
+        font-size: 1.2em; /* 見出しを縮小 */
+        margin-bottom: 5px;
     }
 
     .images {
@@ -184,12 +188,14 @@ body {
 
     .map-container {
         padding: 10px;
-        /* 地図周りの余白をさらに縮小 */
+        /* 地図周りの余白を縮小 */
+        margin-top: 10px;
     }
 
     .map-embed {
-        padding-bottom: 75%;
+        padding-bottom: 50%;
         /* スマホでは縦長の表示 */
+        height: auto;/* 高さの自動調整？ */
     }
 
     .button {
