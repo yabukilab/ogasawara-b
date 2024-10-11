@@ -75,6 +75,7 @@ body {
         background-color: #f5f5f5;
     }
 }
+
 @media screen and (max-width: 480px) {
     h1 {
         font-size: 1.5em;
@@ -94,6 +95,9 @@ body {
         /* スマホでは画像を1列に表示 */
         margin-bottom: 15px;
         /* 画像間のスペースを確保 */
+        height: auto;
+        max-width: 100%;
+        /*上記２こは調整*/
     }
 
     .image p {
@@ -101,5 +105,22 @@ body {
         /* 余白を減らす */
     }
 
-   
+    /* 以下仮実装 */
+    figure {
+        width: 100%;
+        /* figure要素を画面幅に合わせる */
+        text-align: center;
+    }
+
+    img {
+        width: 100%;
+        /* 画像が画面幅にフィットする */
+        height: auto;
+        max-width: 600px; /* 大きい画面では画像幅を600pxに制限 */
+    }
+
+    figcaption {
+        font-size: 1em;
+        padding: 10px;
+    }
 }
