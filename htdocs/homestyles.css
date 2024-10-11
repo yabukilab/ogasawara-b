@@ -157,14 +157,14 @@ body {
 
 @media screen and (max-width: 480px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         /* スマホ用にフォントサイズを小さく */
         line-height: 1.2;
         /* 見出しの行間を狭く */
     }
 
     h2{
-        font-size: 100%; 
+        font-size: 500%; 
         margin-bottom: 5px;
     }
 
@@ -187,13 +187,13 @@ body {
     }
 
     .map-container {
-        padding: 10%;
+        padding: 100%;
         /* 地図周りの余白を縮小 */
-        margin-top: 10%;
+        margin-top: 100%;
     }
 
     .map-embed {
-        padding-bottom: 10%;
+        padding-bottom: 100%;
         /* スマホでは縦長の表示 */
         height: auto;/* 高さの自動調整？ */
     }
