@@ -32,9 +32,10 @@ h1 {
 
 .image a {
     display: block;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     color: inherit;
+    white-space: pre-line;
 }
 
 .image img {
@@ -51,6 +52,8 @@ h1 {
 .image p {
     margin-top: 10px;
     font-weight: bold;
+    text-align: left;
+    white-space: pre-line;
 }
 
 .buttons {
