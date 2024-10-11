@@ -131,7 +131,8 @@ body {
     }
 
     .map-embed {
-        padding-bottom:  56.25%;;
+        padding-bottom: 56.25%;
+        ;
         /* タブレット向けに少し高く */
     }
 }
