@@ -166,6 +166,7 @@ body {
     h2{
         font-size: 1.8em; 
         margin-bottom: 8px;
+        text-align: center;
     }
 
     .images {
@@ -193,7 +194,7 @@ body {
     }
 
     .map-embed {
-        width: 100%; /* 横幅を画面サイズに調整 */
+        width: 65%; /* 横幅を画面サイズに調整 */
         height: 250px; /* 高さを固定して縮小 */
         max-width: 100%; /* 画面の幅に収める */
         margin: 0 auto; /* 中央揃え */
