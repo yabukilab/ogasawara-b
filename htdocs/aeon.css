@@ -75,7 +75,8 @@ body {
         background-color: #f5f5f5;
     }
 }
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 1000px) {
     .container{
         padding: 3%;
         width: 100%;
@@ -98,6 +99,9 @@ body {
         /* スマホでは画像を1列に表示 */
         margin-bottom: 15px;
         /* 画像間のスペースを確保 */
+        height: auto;
+        max-width: 100%;
+        /*上記２こは調整*/
     }
 
     .image p {
@@ -105,6 +109,7 @@ body {
         /* 余白を減らす */
     }
 
+<<<<<<< HEAD
    
 }
 @media screen and (max-width: 480px) {
@@ -136,6 +141,8 @@ body {
         /* 余白を減らす */
     }
 
+=======
+>>>>>>> 0851be7045473303c201e66edc0e5ea968c801c3
     /* 以下仮実装 */
     figure {
         width: 100%;

@@ -101,3 +101,55 @@ body {
 
    
 }
+/* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Responsive image styling */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Keeps image from getting too large on large screens */
+    margin: 10px 0;
+}
+
+/* Ensure captions are aligned */
+figcaption {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    figcaption {
+        font-size: 0.9em;
+    }
+}
