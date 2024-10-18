@@ -83,7 +83,7 @@ body {
 
 @media screen and (max-width: 1000px) {
     img{
-        max-width: 100%;
+        max-width: 80%;
         height: auto;
     }
     .container{
