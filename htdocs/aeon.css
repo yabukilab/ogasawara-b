@@ -1,3 +1,8 @@
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -77,9 +82,6 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-    figure img{
-        width: 50%;
-    }
     .container{
         padding: 3%;
         width: 100%;
