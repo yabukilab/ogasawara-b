@@ -82,6 +82,10 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+    img{
+        max-width: 100%;
+        height: auto;
+    }
     .container{
         padding: 3%;
         width: 100%;
