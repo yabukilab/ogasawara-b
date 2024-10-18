@@ -81,7 +81,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 480px) {
     img{
         max-width: 80%;
         height: auto;
