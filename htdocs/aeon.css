@@ -110,7 +110,6 @@ body {
         /* 余白を減らす */
     }
 
-<<<<<<< HEAD
    
 }
 @media screen and (max-width: 480px) {
@@ -142,8 +141,6 @@ body {
         /* 余白を減らす */
     }
 
-=======
->>>>>>> 0851be7045473303c201e66edc0e5ea968c801c3
     /* 以下仮実装 */
     figure {
         width: 100%;
