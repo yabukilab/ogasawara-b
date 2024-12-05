@@ -17,12 +17,13 @@
     header {
       background: #ff7f50; /* 暖色系のコーラルカラー */
       color: #fff;
-      padding: 10px 20px;
+      padding: 20px 10px;
       text-align: center;
     }
     main {
       margin: 20px auto;
       max-width: 600px;
+      padding: 0 10px; /* スマホでの左右余白を追加 */
     }
     a {
       display: inline-block;
@@ -34,9 +35,23 @@
       border-radius: 5px;
       font-size: 1.2em;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
     }
     a:hover {
       background-color: #ffe4c4; /* ホバー時の背景色を薄いベージュに */
+    }
+    /* メディアクエリで画面幅に応じたスタイル調整 */
+    @media (max-width: 600px) {
+      a {
+        display: block; /* ボタンを縦に並べる */
+        width: calc(100% - 40px); /* ボタン幅を調整（左右の余白） */
+        margin: 10px auto; /* センター揃え */
+        padding: 15px 20px; /* 余白を調整 */
+        font-size: 1em; /* フォントサイズを少し縮小 */
+      }
+      main {
+        padding: 0 20px; /* スマホで左右余白を広めに確保 */
+      }
     }
   </style>
 </head>
