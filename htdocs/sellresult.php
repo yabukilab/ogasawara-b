@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 function h($v) {
   return htmlspecialchars($v, ENT_QUOTES, 'UTF-8');
 }
@@ -22,7 +24,11 @@ try {
 $bookname = $_POST['bookname'] ?? '';
 $price    = $_POST['price']    ?? 0;
 $descript = $_POST['descript'] ?? '';
-$user_id  = 1; // 仮の出品者ID（ログイン機能があればセッションから取得）
+$user_id  = $_SESSION['user_ID'] ?? null;
+if (!$user_id) {
+  echo "ログイン情報が見つかりません";
+  exit();
+}
 
 $image1 = !empty($_FILES['image1']['tmp_name']) ? file_get_contents($_FILES['image1']['tmp_name']) : null;
 $image2 = !empty($_FILES['image2']['tmp_name']) ? file_get_contents($_FILES['image2']['tmp_name']) : null;
