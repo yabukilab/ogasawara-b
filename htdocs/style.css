@@ -1,0 +1,199 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.search-btn {
+    background-color: #005b82;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    width: 90%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列固定 */
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* レスポンシブ対応させる文 */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .search-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .product-price {
+        font-size: 13px;
+    }
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.image-row img, .no-img {
+  width: 32%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+input, textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+  box-sizing: border-box;
+  font-size: 16px;
+  display: block;
+  box-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+    background: #fff;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.image-input {
+    width: 32%;
+    aspect-ratio: 1 / 1;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #005b82;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-input input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.image-input::before {
+    content: "+";
+    font-size: 48px;
+    color: #005b82;
+    z-index: 1;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.detail-btn {
+  background-color: #005b82;
+  color: white;
+  padding: 12px;
+  margin: 20px;
+  width: 48%;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.result-container {
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.result-container p {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.result-container .highlight {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.home-btn {
+  background-color: #005b82;
+  color: white;
+  padding: 15px 25px;
+  font-size: 16px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
