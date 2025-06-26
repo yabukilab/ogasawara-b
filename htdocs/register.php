@@ -22,7 +22,7 @@
             <button type="submit" class="login-btn">登録</button>
         </form>
 
-        <a href="login.php" class="return-btn">戻る</a>
+        <a href="index.php" class="return-btn">戻る</a>
     </div>
 </body>
 </html>
