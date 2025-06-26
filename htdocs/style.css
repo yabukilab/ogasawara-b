@@ -197,3 +197,28 @@ textarea {
   cursor: pointer;
   border-radius: 4px;
 }
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.image-box img {
+  width: 100px;
+  height: 100px;
+}
+
+.dekabota-btn{
+    background-color: #336699; /* ← ボタンの色を#369に統一 */
+    color: white;
+    padding: 30px;
+    font-size: 36px;
+    border: none;
+    width: 90%;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
