@@ -19,10 +19,13 @@ $products_selling = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
 // 取引欄：購入済みで、自分が出品者か購入者になっている商品（bflag=1）
 $sql2 = "SELECT ID, image1, image2, image3, user_ID, buyer_ID FROM products 
-         WHERE bflag=1 AND (user_ID = :user_id OR buyer_ID = :user_id)
+         WHERE bflag=1 AND (user_ID = :user_id1 OR buyer_ID = :user_id2)
          ORDER BY ID DESC LIMIT 10";
 $stmt2 = $db->prepare($sql2);
-$stmt2->execute([':user_id' => $user_id]);
+$stmt2->execute([
+  ':user_id1' => $user_id,
+  ':user_id2' => $user_id
+]);
 $products_dealing = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
