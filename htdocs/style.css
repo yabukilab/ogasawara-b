@@ -222,3 +222,57 @@ textarea {
     text-decoration: none;
     display: inline-block;
 }
+
+.login-btn {
+    background-color: #336699; /* ← ボタンの色を#369に統一 */
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    width: 90%;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.return-btn {
+    background-color: #336699; /* ← 同じく #369 */
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+    border: none;
+    width: 162px; /* ログインボタンの半分サイズ */
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 新規登録リンクの色を #336699 に */
+.register-link {
+    color: #369;
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.error-message {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: red;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .search-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .product-price {
+        font-size: 13px;
+    }
+}
