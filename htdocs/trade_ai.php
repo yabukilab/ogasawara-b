@@ -6,7 +6,7 @@ ini_set('display_errors', '1');
 // DB接続設定
 $host = 'localhost';
 $db   = 'mydb';
-$dbUser = isset($_SERVER['MYSQL_USER']);
+$dbUser   = $_SERVER['MYSQL_USER'] ?? 'testuser';
 $pass = 'pass';
 $charset = 'utf8mb4';
 
