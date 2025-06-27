@@ -4,12 +4,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 // DB接続設定
+$dbServer = '127.0.0.1';
 $db   = 'mydb';
 $user   = '';
 $pass = '';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
+$dsn = "mysql:host={$dbServer};dbname={'mydb'};charset=utf8";
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
