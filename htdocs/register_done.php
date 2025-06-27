@@ -32,14 +32,14 @@ $stmt->execute([$email, $hashed_password]);
 <head>
   <meta charset="UTF-8">
   <title>登録完了</title>
-  <meta http-equiv="refresh" content="5;url=login.php">
+  <meta http-equiv="refresh" content="5;url=index.php">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <p>新規登録しました</p>
     <p><strong>5秒後にログイン画面に戻ります</strong></p>
-    <a href="login.php" class="return-btn">ログイン画面に戻る</a>
+    <a href="index.php" class="return-btn">ログイン画面に戻る</a>
   </div>
 </body>
 </html>
