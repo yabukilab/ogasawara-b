@@ -1,5 +1,12 @@
 <?php
-function h($v) { return htmlspecialchars($v, ENT_QUOTES, 'UTF-8'); }
+session_start();
+require 'db_connect.php';
+
+// ログインチェック
+if (!isset($_SESSION['user_ID'])) {
+  header("Location: login.php");
+  exit;
+}
 
 $dbServer = '127.0.0.1';
 $dbUser   = $_SERVER['MYSQL_USER']     ?? 'testuser';
@@ -16,17 +23,24 @@ try {
     exit();
 }
 
+$user_id = $_SESSION['user_ID']; // ← 購入者ID
+$product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
 // 商品ID取得
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-if ($id > 0) {
-    // bflagを1に更新
-    $stmt = $db->prepare("UPDATE products SET bflag = 1 WHERE ID = :id");
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
+if ($product_id > 0) {
+  // 購入処理：bflagを1にし、buyer_IDを登録
+  $sql = "UPDATE products SET bflag = 1, buyer_ID = :buyer WHERE ID = :id AND bflag = 0";
+  $stmt = $db->prepare($sql);
+  $stmt->execute([
+    ':buyer' => $user_id,
+    ':id' => $product_id
+  ]);
 
-    // チャット画面に遷移（商品ID付き）
-    header("Location: chat.php?id={$id}");
-    exit();
+  // チャット画面に遷移（例: chat.php?id=○）
+  header("Location: chat.php?id=" . $product_id);
+  exit;
 } else {
-    echo "不正なアクセスです";
+  echo "商品IDが不正です。";
 }
+?>
