@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'db_connect.php'; // ← ここで接続
 
 $email = $_POST['email'] ?? '';
@@ -11,6 +12,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user && password_verify($password, $user['password'])) {
   // ログイン成功
+  $_SESSION['user_ID'] = $user['ID'];
   header("Location: home.php"); // 例：ログイン後のページ
   exit;
 } else {
