@@ -64,7 +64,7 @@ CREATE TABLE `products` (
   `bflag` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`),
   KEY `user_ID` (`user_ID`),
-  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `users` (`ID`) ON UPDATE CASCADE
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -86,11 +86,11 @@ DROP TABLE IF EXISTS `reporting`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reporting` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `mailaddress` varchar(30) NOT NULL,
+  `mailaddress` varchar(300) NOT NULL,
   `reason` varchar(300) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `mailaddress` (`mailaddress`),
-  CONSTRAINT `reporting_ibfk_1` FOREIGN KEY (`mailaddress`) REFERENCES `users` (`email`) ON UPDATE CASCADE
+  CONSTRAINT `reporting_ibfk_1` FOREIGN KEY (`mailaddress`) REFERENCES `users` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -138,11 +138,11 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(300) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `mailaddress` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,6 +151,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'test@test.org','$2y$10$2z8zioX7yDfZjd/5eMtShOWQXPt8YMK77gjThN3fHbj.Un8Em/srW');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -163,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-26 14:46:14
+-- Dump completed on 2025-06-27 15:35:12
