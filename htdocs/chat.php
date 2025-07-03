@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO chat (trID, `s-userID`, message, datetime) VALUES (?, ?, ?, NOW())";
     $stmt = $db->prepare($sql);
     $stmt->execute([$trID, $user_id, $message]);
-    header("Location: " . $_SERVER['PHP_SELF'] . "?trID=" . $trID);
+    header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $trID);
     exit;
   }
 }
@@ -107,7 +107,7 @@ $messages = $stmt->fetchAll();
     <?php endforeach; ?>
   </div>
 
-  <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) . '?id=' . $trID ?>" method="post">
+  <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) . '?id=' . urlencode($trID) ?>" method="post">
     <input type="text" name="message" class="message-input" placeholder="メッセージを入力">
     <button type="submit" class="send-button">送信</button>
   </form>
