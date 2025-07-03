@@ -1,13 +1,16 @@
 <?php
+session_start();
+require 'db_connect.php';
+
 // エラー表示
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 // DB接続設定
 $dbServer = '127.0.0.1';
-$db   = 'mydb';
-$user   = '';
-$pass = '';
+$db   = $_SERVER['MYSQL_DB']        ?? 'mydb';
+$user   = $_SERVER['MYSQL_USER']    ?? 'testuser';
+$pass = $_SERVER['MYSQL_PASSWORD']  ?? 'mydb';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host={$dbServer};dbname={'mydb'};charset=utf8";
