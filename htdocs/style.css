@@ -287,3 +287,61 @@ textarea {
     margin-top: 10px;
     cursor: pointer;
 }
+input, textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+}
+
+.button-pair {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+.send-button,
+.return-button,
+.cancel-button,
+.end-button {
+  background-color: #336699;
+  color: white;
+  padding: 12px 0;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 45%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.send-button:hover,
+.return-button:hover,
+.cancel-button:hover,
+.end-button:hover {
+  background-color: #285580;
+}
+
+.register-link {
+  color: #336699;
+  margin-top: 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.error-message {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: red;
+}
