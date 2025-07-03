@@ -101,8 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta http-equiv="refresh" content="5;url=home.php">
   <?php endif; ?>
 </head>
-<body>
-
+ <form action="submit_cancel.php" method="POST">
   <div class="container">
     <form method="post" action="">
       <p>この取引を中止します。<br>中止する理由を入力してください。</p>

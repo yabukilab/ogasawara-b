@@ -3,8 +3,7 @@ require 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id'])) {
     $id = intval($_POST['id']);
-
-    // 通報テーブルから mailaddress を取得
+ // 通報テーブルから mailaddress を取得
     $stmt = $db->prepare("SELECT mailaddress FROM reporting WHERE id = ?");
     $stmt->execute([$id]);
     $report = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -30,3 +29,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id'])) {
 
 header("Location: report_list.php");
 exit;
+   
