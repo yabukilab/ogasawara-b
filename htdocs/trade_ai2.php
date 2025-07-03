@@ -13,7 +13,7 @@ $user   = $_SERVER['MYSQL_USER']    ?? 'testuser';
 $pass = $_SERVER['MYSQL_PASSWORD']  ?? 'pass';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host={$dbServer};dbname={'mydb'};charset=utf8";
+$dsn = "mysql:host={$dbServer};dbname={'$db'};charset=utf8";
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $message = $_POST['message'] ?? '';
 
   if (!empty(trim($message))) {
-   $stmt = $db->prepare("INSERT INTO chat (trID, `s-userID`, message, datetime) VALUES (?, ?, ?, NOW())");
+   $stmt = $pdo->prepare("INSERT INTO chat (trID, `s-userID`, message, datetime) VALUES (?, ?, ?, NOW())");
 $stmt->execute([1, 3, $message]); // ← 実際はログイン中のユーザーIDや取引IDに差し替える
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
