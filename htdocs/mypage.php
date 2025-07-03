@@ -46,7 +46,7 @@ $products_dealing = $stmt2->fetchAll(PDO::FETCH_ASSOC);
               $src = "data:image/jpeg;base64," . $base64;
             ?>
             <div class="image-box">
-              <a href="item.php?id=<?= htmlspecialchars($product['ID']) ?>">
+              <a href="detail.php?id=<?= htmlspecialchars($product['ID']) ?>">
                 <img src="<?= $src ?>" alt="出品商品ID<?= htmlspecialchars($product['ID']) ?>">
               </a>
             </div>
