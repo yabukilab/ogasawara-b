@@ -10,14 +10,14 @@ if (!isset($_SESSION['user_ID'])) {
 $user_id = $_SESSION['user_ID'];
 
 // 出品欄: 自分が出品していて未購入のもの
-$sql1 = "SELECT ID, image1, image2, image3 FROM products 
+$sql1 = "SELECT ID, image1 FROM products 
          WHERE user_ID = :user_id AND bflag=0 ORDER BY ID DESC LIMIT 10";
 $stmt1 = $db->prepare($sql1);
 $stmt1->execute([':user_id' => $user_id]);
 $products_selling = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
 // 取引欄: 購入済みで自分が出品者or購入者のもの
-$sql2 = "SELECT ID, image1, image2, image3, user_ID, buyer_ID FROM products 
+$sql2 = "SELECT ID, image1, user_ID, buyer_ID FROM products 
          WHERE bflag=1 AND (user_ID=:user_id1 OR buyer_ID=:user_id2) ORDER BY ID DESC LIMIT 10";
 $stmt2 = $db->prepare($sql2);
 $stmt2->execute([
