@@ -13,7 +13,7 @@ $user   = $_SERVER['MYSQL_USER']    ?? 'testuser';
 $pass = $_SERVER['MYSQL_PASSWORD']  ?? 'pass';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host={$dbServer};dbname={'$db'};charset=utf8";
+$dsn = "mysql:host={$dbServer};dbname={$db};charset={$charset}";
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
@@ -39,7 +39,7 @@ $stmt->execute([1, 3, $message]); // ← 実際はログイン中のユーザー
 
 // --- メッセージ取得処理 ---
 $messages = [];
-$stmt = $db->prepare("SELECT c.message, c.datetime, u.email FROM chat c JOIN users u ON c.`s-userID` = u.ID WHERE c.trID = ?");
+$stmt = $pdo->prepare("SELECT c.message, c.datetime, u.email FROM chat c JOIN users u ON c.`s-userID` = u.ID WHERE c.trID = ?");
 $stmt->execute([1]);// ← 対象の取引ID
 $messages = $stmt->fetchAll();
 ?>

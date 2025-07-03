@@ -276,3 +276,14 @@ textarea {
         font-size: 13px;
     }
 }
+
+.turn_back-btn {
+    background-color: #005b82;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    width: 90%;
+    margin-top: 10px;
+    cursor: pointer;
+}
