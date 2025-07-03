@@ -1,48 +1,47 @@
 <?php
 session_start();
+
+// DB接続（db_connect.php 読み込み or 直書きどちらでもOK）
 require 'db_connect.php';
+
+// ログイン確認
+if (!isset($_SESSION['user_ID'])) {
+  header("Location: login.php");
+  exit;
+}
+
+$user_id = $_SESSION['user_ID'];
 
 // エラー表示
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// DB接続設定
-$dbServer = '127.0.0.1';
-$db   = $_SERVER['MYSQL_DB']        ?? 'mydb';
-$user   = $_SERVER['MYSQL_USER']    ?? 'testuser';
-$pass = $_SERVER['MYSQL_PASSWORD']  ?? 'pass';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host={$dbServer};dbname={'mydb'};charset=utf8";
-$options = [
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-];
-
-try {
-  $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-  die("DB接続失敗: " . $e->getMessage());
+// --- trIDの取得（例: URLの ?trID=1）
+$trID = isset($_GET['trID']) ? intval($_GET['trID']) : 0;
+if ($trID <= 0) {
+  die('取引IDが不正です。');
 }
 
-// --- POST送信処理 ---
+// --- メッセージ送信処理 ---
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $username = $_POST['username'] ?? '匿名';
-  $message = $_POST['message'] ?? '';
+  $message = trim($_POST['message'] ?? '');
 
-  if (!empty(trim($message))) {
-    $stmt = $pdo->prepare("INSERT INTO chat_messages (username, message, created_at) VALUES (?, ?, NOW())");
-    $stmt->execute([$username, $message]);
-    header("Location: " . $_SERVER['PHP_SELF']);
+  if ($message !== '') {
+    $sql = "INSERT INTO chat (trID, `s-userID`, message, datetime) VALUES (?, ?, ?, NOW())";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$trID, $user_id, $message]);
+    header("Location: " . $_SERVER['PHP_SELF'] . "?trID=" . $trID);
     exit;
   }
 }
 
-// --- メッセージ取得処理 ---
-$messages = [];
-$stmt = $pdo->query("SELECT username, message, created_at FROM chat_messages ORDER BY created_at ASC");
+// --- メッセージ取得 ---
+$sql = "SELECT `s-userID`, message, datetime FROM chat WHERE trID = ? ORDER BY datetime ASC";
+$stmt = $db->prepare($sql);
+$stmt->execute([$trID]);
 $messages = $stmt->fetchAll();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ja">
