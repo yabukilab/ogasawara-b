@@ -56,6 +56,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <input type="text" name="query" placeholder="商品名で検索" value="<?php echo h($searchQuery); ?>">
         <button type="submit" class="search-btn">検索</button>
     </form>
+    
+    <form action="home.php" method="get">
+      <button class="return-btn">戻る</button>
+    </form>
 
     <div class="products">
     <?php if (count($products) > 0): ?>
@@ -79,9 +83,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>商品が見つかりませんでした。</p>
     <?php endif; ?>
     </div>
-    <form action="home.php" method="get">
-      <button class="return-btn">戻る</button>
-    </form>
 </div>
 </body>
 </html>
