@@ -10,7 +10,7 @@ ini_set('display_errors', '1');
 $dbServer = '127.0.0.1';
 $db   = $_SERVER['MYSQL_DB']        ?? 'mydb';
 $user   = $_SERVER['MYSQL_USER']    ?? 'testuser';
-$pass = $_SERVER['MYSQL_PASSWORD']  ?? 'mydb';
+$pass = $_SERVER['MYSQL_PASSWORD']  ?? 'pass';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host={$dbServer};dbname={'mydb'};charset=utf8";
