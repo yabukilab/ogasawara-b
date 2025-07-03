@@ -13,7 +13,7 @@ $user   = $_SERVER['MYSQL_USER']    ?? 'testuser';
 $pass = $_SERVER['MYSQL_PASSWORD']  ?? 'pass';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host={$dbServer};dbname={'$db'};charset={$charset}";
+$dsn = "mysql:host={$dbServer};dbname={$db};charset={$charset}";
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
