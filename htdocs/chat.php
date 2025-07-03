@@ -16,10 +16,10 @@ $user_id = $_SESSION['user_ID'];
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// --- trIDの取得（例: URLの ?trID=1）
-$trID = isset($_GET['trID']) ? intval($_GET['trID']) : 0;
+// --- trIDの取得（URLの ?id=123 を使う）---
+$trID = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($trID <= 0) {
-  die('取引IDが不正です。');
+  die('商品IDが不正です。');
 }
 
 // --- メッセージ送信処理 ---
