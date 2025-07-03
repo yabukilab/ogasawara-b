@@ -346,7 +346,7 @@ textarea {
   margin-bottom: 30px;
   color: red;
 }
-=======
+
 
 .turn_home-btn {
     background-color: #336699; /* ← 同じく #369 */
@@ -359,5 +359,5 @@ textarea {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
->>>>>>> 46facdfd81c6c8c51fba092943448b0995c31222
+>>>>>> 46facdfd81c6c8c51fba092943448b0995c31222
 }
