@@ -79,6 +79,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>商品が見つかりませんでした。</p>
     <?php endif; ?>
     </div>
+    <form action="home.php" method="get">
+      <button class="return-btn">戻る</button>
+    </form>
 </div>
 </body>
 </html>
