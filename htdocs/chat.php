@@ -16,10 +16,10 @@ $user_id = $_SESSION['user_ID'];
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-// --- trIDの取得（例: URLの ?trID=1）
-$trID = isset($_GET['trID']) ? intval($_GET['trID']) : 0;
+// --- trIDの取得（URLの ?id=123 を使う）---
+$trID = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($trID <= 0) {
-  die('取引IDが不正です。');
+  die('商品IDが不正です。');
 }
 
 // --- メッセージ送信処理 ---
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO chat (trID, `s-userID`, message, datetime) VALUES (?, ?, ?, NOW())";
     $stmt = $db->prepare($sql);
     $stmt->execute([$trID, $user_id, $message]);
-    header("Location: " . $_SERVER['PHP_SELF'] . "?trID=" . $trID);
+    header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $trID);
     exit;
   }
 }
@@ -96,19 +96,18 @@ $messages = $stmt->fetchAll();
 <div class="container">
   <button class="home-button" onclick="location.href='home.php'">ホーム画面に戻る</button>
 
-  <div class="chat-box" id="chat-box">
+  <div class="chat-box">
     <?php foreach ($messages as $row): ?>
       <p>
-        <strong><?= htmlspecialchars($row['username']) ?></strong>
-        <?= htmlspecialchars($row['created_at']) ?><br>
+        <strong>ユーザID: <?= htmlspecialchars($row['s-userID']) ?></strong>
+        <?= htmlspecialchars($row['datetime']) ?><br>
         <?= nl2br(htmlspecialchars($row['message'])) ?>
       </p>
       <hr>
     <?php endforeach; ?>
   </div>
 
-  <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-    <input type="hidden" name="username" value="あなた">
+  <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) . '?id=' . urlencode($trID) ?>" method="post">
     <input type="text" name="message" class="message-input" placeholder="メッセージを入力">
     <button type="submit" class="send-button">送信</button>
   </form>
