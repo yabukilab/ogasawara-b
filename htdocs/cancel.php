@@ -57,15 +57,14 @@
     }
   </style>
 </head>
-<body>
-
+ <form action="submit_cancel.php" method="POST">
   <div class="container">
     <p>この取引を中止します。<br>中止する理由を入力してください</p>
     <textarea placeholder="コメント"></textarea>
-
-    <div class="button-pair">
-      <button class="send-button">送信</button>
-      <a href="chat.php" class="return-button">戻る</a>
+    
+  <div class="button-pair">
+    <button type="submit" class="send-button">送信</button>
+    <a href="chat.php" class="return-button">戻る</a>
     </div>
   </div>
 
