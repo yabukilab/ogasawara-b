@@ -287,3 +287,16 @@ textarea {
     margin-top: 10px;
     cursor: pointer;
 }
+
+.turn_home-btn {
+    background-color: #336699; /* ← 同じく #369 */
+    color: white;
+    padding: 8px 0;
+    font-size: 20px;
+    border: none;
+    width: 250px; 
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
