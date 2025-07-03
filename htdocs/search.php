@@ -56,9 +56,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <input type="text" name="query" placeholder="商品名で検索" value="<?php echo h($searchQuery); ?>">
         <button type="submit" class="search-btn">検索</button>
     </form>
-    
+
     <form action="home.php" method="get">
-      <button class="return-btn">戻る</button>
+      <button class="turn_back-btn">戻る</button>
     </form>
 
     <div class="products">
