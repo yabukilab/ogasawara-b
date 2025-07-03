@@ -80,7 +80,7 @@ $products_dealing = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <form action="home.php" method="get">
-      <button class="return-btn">戻る</button>
+      <button class="turn_home-btn">戻る</button>
     </form>
   </div>
 </body>
