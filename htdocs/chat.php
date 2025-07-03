@@ -96,19 +96,18 @@ $messages = $stmt->fetchAll();
 <div class="container">
   <button class="home-button" onclick="location.href='home.php'">ホーム画面に戻る</button>
 
-  <div class="chat-box" id="chat-box">
+  <div class="chat-box">
     <?php foreach ($messages as $row): ?>
       <p>
-        <strong><?= htmlspecialchars($row['username']) ?></strong>
-        <?= htmlspecialchars($row['created_at']) ?><br>
+        <strong>ユーザID: <?= htmlspecialchars($row['s-userID']) ?></strong>
+        <?= htmlspecialchars($row['datetime']) ?><br>
         <?= nl2br(htmlspecialchars($row['message'])) ?>
       </p>
       <hr>
     <?php endforeach; ?>
   </div>
 
-  <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-    <input type="hidden" name="username" value="あなた">
+  <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) . '?id=' . $trID ?>" method="post">
     <input type="text" name="message" class="message-input" placeholder="メッセージを入力">
     <button type="submit" class="send-button">送信</button>
   </form>
