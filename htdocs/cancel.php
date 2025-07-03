@@ -65,7 +65,7 @@
 
     <div class="button-pair">
       <button class="send-button">送信</button>
-      <a href="trade_ai.php" class="return-button">戻る</a>
+      <a href="chat.php" class="return-button">戻る</a>
     </div>
   </div>
 
