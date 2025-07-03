@@ -3,7 +3,7 @@ session_start();
 require 'db_connect.php';
 
 if (!isset($_SESSION['user_ID'])) {
-  header("Location: index.php");
+  header("Location: login.php");
   exit;
 }
 
@@ -101,7 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta http-equiv="refresh" content="5;url=home.php">
   <?php endif; ?>
 </head>
- <form action="submit_cancel.php" method="POST">
+<body>
+
   <div class="container">
     <form method="post" action="">
       <p>この取引を中止します。<br>中止する理由を入力してください。</p>
@@ -116,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
       <div class="button-pair">
         <button type="submit" class="send-button">送信</button>
-        <a href="home.php" class="return-button">戻る</a>
+        <a href="javascript:history.back()" class="return-button">戻る</a>
       </div>
     </form>
   </div>
