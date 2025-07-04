@@ -65,8 +65,16 @@ function imageTag($blob) {
     <textarea readonly><?= h($product['descript']) ?></textarea>
 
     <div class="button-row">
-        <a href="javascript:history.back()" class="detail-btn">戻る</a>
-        <a href="buy.php?id=<?= h($product['ID']) ?>" class="detail-btn">購入する</a>
+      <a href="javascript:history.back()" class="detail-btn">戻る</a>
+      <button class="detail-btn" onclick="confirmPurchase(<?= h($product['ID']) ?>)">購入する</button>
     </div>
+
+    <script>
+    function confirmPurchase(productId) {
+      if (confirm('本当に購入しますか？')) {
+        window.location.href = 'buy.php?id=' + productId;
+      }
+    }
+    </script>
 </body>
 </html>
