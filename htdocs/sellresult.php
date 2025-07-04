@@ -34,6 +34,52 @@ $image1 = !empty($_FILES['image1']['tmp_name']) ? file_get_contents($_FILES['ima
 $image2 = !empty($_FILES['image2']['tmp_name']) ? file_get_contents($_FILES['image2']['tmp_name']) : null;
 $image3 = !empty($_FILES['image3']['tmp_name']) ? file_get_contents($_FILES['image3']['tmp_name']) : null;
 
+// ▼ image1が未指定ならエラー画面表示して終了
+if (!$image1) {
+  ?>
+  <!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>出品エラー</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .error-container {
+        max-width: 400px;
+        margin: 100px auto;
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+      }
+      .error-message {
+        color: red;
+        font-size: 16px;
+        margin: 20px 0;
+      }
+      .back-btn {
+        background-color: #555;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-container">
+      <p class="error-message">画像を最低1枚登録してください</p>
+      <a href="javascript:history.back()" class="back-btn">戻る</a>
+    </div>
+  </body>
+  </html>
+  <?php
+  exit();
+}
+
 // 登録処理
 $sql = "INSERT INTO products (bookname, price, descript, image1, image2, image3, user_ID, bflag)
         VALUES (:bookname, :price, :descript, :image1, :image2, :image3, :user_ID, 0)";
