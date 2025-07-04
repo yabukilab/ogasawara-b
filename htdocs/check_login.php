@@ -13,7 +13,14 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user && password_verify($password, $user['password'])) {
   // ログイン成功
   $_SESSION['user_ID'] = $user['ID'];
-  header("Location: home.php"); // 例：ログイン後のページ
+  
+  // 管理者判断
+  if ($email === 'admin@example.com' && $password === 'adminpass') {
+    header("Location: report_list.php");
+    exit;
+  }
+  
+  header("Location: home.php"); // ログイン後のページ
   exit;
 } else {
   // ログイン失敗
